@@ -440,11 +440,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .tc.sel{border-color:var(--acc)}
 .tp{height:66px;display:flex;overflow:hidden;background:#fff}
 .tl{padding:3px 5px;font-size:9px;color:var(--acc);font-weight:700;text-align:center;letter-spacing:.04em}
-.ts{background:#1e3a4a}.ts2{background:#2d2d2d}
+.ts{background:#1a1a1a}.ts2{background:#2d2d2d}
 .tcol{flex:1;padding:4px;display:flex;flex-direction:column;gap:3px}
 .tl2{height:3px;background:#ddd;border-radius:1px}.tl2.dk{background:#555}.tl2.h{height:5px;background:#bbb}
-.thdr{height:18px;background:#1e3a4a;flex-shrink:0}
-.tname{height:16px;background:#1e3a4a;width:100%}
+.thdr{height:18px;background:#1a1a1a;flex-shrink:0}
+.tname{height:16px;background:#1a1a1a;width:100%}
 
 /* section separator (design tab) */
 .dsep{border:none;border-top:1px solid var(--bord);margin:14px 0}
@@ -514,7 +514,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .typo-sub-group{border-top:1px solid rgba(255,255,255,.07);margin-top:10px;padding-top:10px}
 .typo-sub-group:first-of-type{border-top:none;margin-top:6px;padding-top:0}
 .typo-divider{border-top:1px solid rgba(255,255,255,.07);margin:12px 0 12px}
-.rsec{break-inside:avoid}
+.rsec{break-before:avoid;break-inside:avoid}
 .ie-hdr[contenteditable]:hover,.ie-text:hover{outline:2px dashed rgba(201,169,110,.7);outline-offset:2px;cursor:text;border-radius:2px;background:rgba(201,169,110,.05)}
 .ie-hdr[contenteditable]:focus,.ie-text:focus{outline:2px solid rgba(201,169,110,.85);outline-offset:1px;border-radius:2px;background:rgba(201,169,110,.07)}
 .ie-text:hover{outline:2px dashed rgba(109,184,154,.8);outline-offset:2px;cursor:text;border-radius:2px;background:rgba(109,184,154,.04)}
@@ -534,7 +534,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .rsec-title.sl-none{}
 
 /* job — grouped by company */
-.r-co-block{margin-bottom:16px;break-inside:avoid}
+.r-co-block{margin-bottom:16px;break-inside:auto}
 .r-co-hdr{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-bottom:5px}
 .r-co-name{font-weight:700;letter-spacing:.01em}
 .r-co-loc{font-style:normal}
@@ -607,6 +607,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 ══════════════════════════════════════════════ */
 @media print{
   html,body{background:#fff!important;margin:0!important;padding:0!important;overflow:visible!important;width:auto!important;height:auto!important}
+  *{print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important;color-adjust:exact!important}
   #panel{display:none!important}
   #pw{display:block!important;background:#fff!important;overflow:visible!important;width:100%!important;height:auto!important}
   .page-break-indicator{display:none!important}
@@ -662,7 +663,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <div class="ds-group-body">
           <div class="ef"><label>Full Name</label><input type="text" id="h-name" value="Your Name" oninput="renderResume()"></div>
           <div class="ef"><label>Phone</label><input type="text" id="h-phone" value="(000) 000-0000" oninput="renderResume()"></div>
-          <div class="ef"><label>Email</label><input type="text" id="h-email" value="yourname@email.com" oninput="renderResume()"></div>
+          <div class="ef"><label>Email</label><input type="text" id="h-email" value="user@email.com" oninput="renderResume()"></div>
           <div class="ef"><label>Location</label><input type="text" id="h-loc" value="City, State" oninput="renderResume()"></div>
           <div class="ef"><label>LinkedIn URL</label><input type="url" id="h-linkedin" value="https://linkedin.com/in/yourprofile" placeholder="https://linkedin.com/in/..." oninput="renderResume()"></div>
           <div class="ef"><label>LinkedIn Display Text</label><input type="text" id="h-linkedin-lbl" value="linkedin.com/in/yourprofile" oninput="renderResume()"></div>
@@ -996,24 +997,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
                 </div>
               </div>
             </div>
-            <!-- Job Title & Date sub-group -->
-            <div class="typo-sub-group">
-              <div class="typo-sub-hdr">Job Title &amp; Date</div>
-              <div class="ef"><label>Font Size</label>
-                <div class="fs-row"><input type="range" id="r-bs" min="9" max="16" value="12"><input class="snum" id="v-bs" type="number" min="9" max="16" value="12"></div>
-              </div>
-              <div class="ef"><label>Text Style</label>
-                <div class="style-btn-row">
-                  <button id="jd-bold" class="style-btn" title="Bold" onclick="tst('jtDateBold','jd-bold')"><b>B</b></button>
-                  <button id="jd-italic" class="style-btn" title="Italic" onclick="tst('jtDateItalic','jd-italic')"><i>I</i></button>
-                  <button id="jd-underline" class="style-btn" title="Underline" onclick="tst('jtDateUnderline','jd-underline')"><u>U</u></button>
-                </div>
-              </div>
-            </div>
             <!-- Body Text sub-group -->
             <div class="typo-sub-group">
               <div class="typo-sub-hdr">Body Text</div>
-              <div style="font-size:9px;color:var(--muted2);line-height:1.5;margin-bottom:5px;padding:4px 7px;background:var(--surf2);border-left:2px solid var(--acc);border-radius:2px">Applies to all body content not covered above — bullets, skills, certifications, education, summary, and custom text.</div>
+              <div style="font-size:9px;color:var(--muted2);line-height:1.5;margin-bottom:5px;padding:4px 7px;background:var(--surf2);border-left:2px solid var(--acc);border-radius:2px">Applies to all body content — job titles, dates, bullets, skills, certifications, education degree, summary, and custom text.</div>
               <div class="ef"><label>Font Size</label>
                 <div class="fs-row"><input type="range" id="r-bbs" min="8" max="14" value="12"><input class="snum" id="v-bbs" type="number" min="8" max="14" value="12"></div>
               </div>
@@ -1042,9 +1029,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
             <div class="color-row">
               <div class="color-swatch-group">
                 <div class="csw-label">Background</div>
-                <input type="color" id="c-nbar-bg" value="#1e3a4a" class="csw-input">
-                <div class="csw-hex" id="hex-nbar-bg">#1e3a4a</div>
-                <button class="reset-color-btn" onclick="resetColor('c-nbar-bg','nameBarBg','#1e3a4a')" title="Reset to default">↺</button>
+                <input type="color" id="c-nbar-bg" value="#1a1a1a" class="csw-input">
+                <div class="csw-hex" id="hex-nbar-bg">#1a1a1a</div>
+                <button class="reset-color-btn" onclick="resetColor('c-nbar-bg','nameBarBg','#1a1a1a')" title="Reset to default">↺</button>
               </div>
               <div class="color-swatch-group">
                 <div class="csw-label">Text</div>
@@ -1063,9 +1050,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
             <div class="color-row">
               <div class="color-swatch-group">
                 <div class="csw-label">Background</div>
-                <input type="color" id="c-sbg" value="#1e3a4a" class="csw-input">
-                <div class="csw-hex" id="hex-sbg">#1e3a4a</div>
-                <button class="reset-color-btn" onclick="resetColor('c-sbg','sbg','#1e3a4a')" title="Reset to default">↺</button>
+                <input type="color" id="c-sbg" value="#1a1a1a" class="csw-input">
+                <div class="csw-hex" id="hex-sbg">#1a1a1a</div>
+                <button class="reset-color-btn" onclick="resetColor('c-sbg','sbg','#1a1a1a')" title="Reset to default">↺</button>
               </div>
               <div class="color-swatch-group">
                 <div class="csw-label">Text</div>
@@ -1083,9 +1070,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
             <div class="color-row">
               <div class="color-swatch-group">
                 <div class="csw-label">Section Header</div>
-                <input type="color" id="c-acc" value="#1e3a4a" class="csw-input">
-                <div class="csw-hex" id="hex-acc">#1e3a4a</div>
-                <button class="reset-color-btn" onclick="resetColor('c-acc','acc','#1e3a4a')" title="Reset to default">↺</button>
+                <input type="color" id="c-acc" value="#1a1a1a" class="csw-input">
+                <div class="csw-hex" id="hex-acc">#1a1a1a</div>
+                <button class="reset-color-btn" onclick="resetColor('c-acc','acc','#1a1a1a')" title="Reset to default">↺</button>
               </div>
               <div class="color-swatch-group">
                 <div class="csw-label">Body Text</div>
@@ -1107,7 +1094,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
     <!-- ══ SPACING & ALIGNMENT TAB ══ -->
     <div id="tab-spacing" style="display:none">
 
-      <!-- Alignment Classic -->
+      <!-- Alignment Modern / Top Bar -->
       <div class="ds-group" id="spacing-classic-aln">
         <div class="ds-group-hdr collapsible">↔ Name Bar Alignment <span class="ds-badge">Modern · Top Bar</span></div>
         <div class="ds-group-body">
@@ -1138,7 +1125,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           <div class="ef" id="typo-barh-row"><label>Bar Height <span class="ds-badge">Modern · Top Bar</span></label>
             <div class="fs-row"><input type="range" id="r-nbh" min="40" max="180" value="80" step="4"><input class="snum" id="v-nbh" type="number" min="40" max="180" value="80"></div>
           </div>
-
+          <button class="btn btn-ghost btn-sm" style="width:100%;font-size:10px;margin-top:8px" onclick="resetNameHeading()">↺ Reset Name &amp; Heading to Defaults</button>
         </div>
       </div>
 
@@ -1150,6 +1137,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           <div class="ef"><label>Between Sections</label>
             <div class="fs-row"><input type="range" id="r-msp" min="4" max="64" step="2" value="10"><input class="snum" id="v-msp" type="number" min="4" max="64" step="2" value="10"></div>
           </div>
+          <button class="btn btn-ghost btn-sm" style="width:100%;font-size:10px;margin-top:8px" onclick="resetMainColumn()">↺ Reset Main Column to Defaults</button>
         </div>
       </div>
 
@@ -1166,6 +1154,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           <div class="ef"><label>Between Sections</label>
             <div class="fs-row"><input type="range" id="r-ssp" min="4" max="64" step="2" value="10"><input class="snum" id="v-ssp" type="number" min="4" max="64" step="2" value="10"></div>
           </div>
+          <button class="btn btn-ghost btn-sm" style="width:100%;font-size:10px;margin-top:8px" onclick="resetSidebar()">↺ Reset Sidebar to Defaults</button>
         </div>
       </div>
 
@@ -1184,12 +1173,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
             <input type="number" id="lh-custom" class="snum" min="0.8" max="3" step="0.05" value="1.5" style="width:60px"
               oninput="setLH(parseFloat(this.value)||1.5)">
           </div>
+          <button class="btn btn-ghost btn-sm" style="width:100%;font-size:10px;margin-top:8px" onclick="resetSpacing()">↺ Reset Line Spacing to Defaults</button>
         </div>
       </div>
 
       <!-- Page Margins — at bottom -->
       <div class="ds-group">
-        <div class="ds-group-hdr collapsible">📄 Page Margins <span style="font-size:8px;opacity:.5;font-weight:400;letter-spacing:0;text-transform:none">(px)</span></div>
+        <div class="ds-group-hdr collapsible">📄 Page Margins</div>
         <div class="ds-group-body">
           <div class="ef"><label>Top</label>
             <div class="fs-row"><input type="range" id="r-mt" min="0" max="96" step="4" value="20"><input class="snum" id="v-mt" type="number" min="0" max="96" step="4" value="20"></div>
@@ -1203,12 +1193,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           <div class="ef"><label>Right</label>
             <div class="fs-row"><input type="range" id="r-mr" min="0" max="96" step="4" value="48"><input class="snum" id="v-mr" type="number" min="0" max="96" step="4" value="48"></div>
           </div>
+          <button class="btn btn-ghost btn-sm" style="width:100%;font-size:10px;margin-top:8px" onclick="resetMargins()">↺ Reset Margins to Defaults</button>
+          <button id="toggle-margins-btn" class="btn btn-ghost btn-sm" style="width:100%;font-size:10px;margin-top:6px" onclick="toggleMarginGuides()">◻ Show Margin Lines</button>
         </div>
       </div>
 
-      <div style="margin-top:4px;padding-top:4px">
-        <button class="btn btn-ghost btn-sm" style="width:100%;font-size:10px" onclick="resetSpacing()">↺ Reset Spacing to Defaults</button>
-      </div>
 
     </div><!-- /tab-spacing -->
 
@@ -1221,6 +1210,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       <button class="pf-btn pf-load" onclick="openLoadModal()">📂 Load</button>
     </div>
     <button class="pf-btn pf-print" onclick="printResume()" title="Export PDF (Ctrl+P / ⌘P)">⬇ Export PDF <small>(via browser print · Ctrl+P)</small></button>
+    <div style="text-align:center;font-size:9px;color:var(--muted);letter-spacing:.04em;margin-top:4px">© 2026 Michele Xie. All rights reserved.</div>
   </div>
 </div>
 
@@ -1280,62 +1270,89 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       </div>
 
       <div class="faq-section">
+        <div class="faq-section-title">Printing &amp; Extra Pages</div>
+        <div class="faq-q">Why does my PDF have a blank or partial extra page?</div>
+        <div class="faq-a">This can happen when the sidebar background extends slightly beyond the content area. To remove the extra page:<br><br>
+          1. In Chrome's print dialog, click <strong>More settings</strong>.<br>
+          2. Under <strong>Pages</strong>, change it from "All" to a specific range — e.g. <code>1-2</code> if your resume is two pages, or <code>1</code> if it's one page.<br>
+          3. Click <strong>Save</strong>.<br><br>
+          Alternatively, reduce your content slightly or lower the <strong>Bottom Margin</strong> under <strong>Spacing &amp; Align → Page Margins</strong> to bring content within one page.
+        </div>
+        <div class="faq-q">How do I know how many pages my resume is?</div>
+        <div class="faq-a">The live preview shows a dashed page break line with a page counter (e.g. <strong>Page 1 / 2</strong>) whenever content exceeds one page. Use this as your guide before exporting. If you see a page break, trim content or reduce spacing to stay on one page.</div>
+      </div>
+
+      <div class="faq-section">
         <div class="faq-section-title">Templates</div>
         <div class="faq-q">What templates are available?</div>
         <div class="faq-a">
           Four templates are available:<br><br>
-          <strong>Modern</strong> — A colored name bar across the top with a vertical sidebar column on the left or right. Best for visually distinctive, design-forward resumes. The sidebar makes it less suitable for ATS-only submissions.<br><br>
-          <strong>Standard</strong> — Clean single-column layout with no sidebar or header bar. The most ATS-friendly option — parsers read it linearly without ambiguity. Best for applications going through applicant tracking systems.<br><br>
-          <strong>Sidebar</strong> — Two-column layout with a dedicated sidebar and no top name bar. Good for visually separating skills and credentials from work history. Less ATS-friendly due to the column structure.<br><br>
-          <strong>Top Bar</strong> — Full-width colored header with a clean single-column body below. ATS-friendly like Standard, with added visual structure in the header. Bar height, name font, and alignment are adjustable under <strong>Spacing &amp; Align → Name &amp; Heading</strong>. Defaults to center alignment.
+          <strong>Modern</strong> — Colored name bar at top with a vertical sidebar column. Design-forward and distinctive. Bar height, alignment (defaults to Center), and colors are adjustable. Less ATS-friendly due to the sidebar.<br><br>
+          <strong>Standard</strong> — Clean single-column layout. The most ATS-friendly option — parsers read it linearly without ambiguity.<br><br>
+          <strong>Sidebar</strong> — Two-column layout with a dedicated sidebar and no name bar. Good for visually separating skills from work history. Less ATS-friendly.<br><br>
+          <strong>Top Bar</strong> — Full-width colored header with a single-column body. ATS-friendly like Standard, with visual structure in the header. Bar height and alignment (defaults to Center) adjustable under <strong>Spacing &amp; Align → Name &amp; Heading</strong>.
         </div>
         <div class="faq-q">Which template is best for ATS?</div>
-        <div class="faq-a"><strong>Standard</strong> and <strong>Top Bar</strong> are the most ATS-friendly — both use a single-column body that applicant tracking systems parse cleanly and in order. Avoid <strong>Modern</strong> and <strong>Sidebar</strong> when submitting through automated systems, as multi-column layouts can cause parsers to misread the content sequence.</div>
+        <div class="faq-a"><strong>Standard</strong> and <strong>Top Bar</strong> are the most ATS-friendly — single-column body that parsers read cleanly. Avoid <strong>Modern</strong> and <strong>Sidebar</strong> for automated systems as multi-column layouts can confuse content sequence.</div>
         <div class="faq-q">What's the difference between Modern's Name Bar and Sidebar?</div>
-        <div class="faq-a">The <strong>Name Bar</strong> is the horizontal colored bar at the top showing your name and contact info. The <strong>Sidebar</strong> is the vertical column on the left or right for skills, certifications, and other sections. In <strong>Design → Colors</strong>, "Name &amp; Header Bar" controls the top bar color; "Sidebar" controls the column color. Both are unique to the Modern template.</div>
+        <div class="faq-a">The <strong>Name Bar</strong> is the horizontal colored bar at the top (name + contact). The <strong>Sidebar</strong> is the vertical column for skills and certifications. In <strong>Design → Colors</strong>, "Name &amp; Header Bar" controls the top bar; "Sidebar" controls the column. Modern always defaults to showing contact in the Name Bar.</div>
         <div class="faq-q">Where does contact info appear on Modern?</div>
-        <div class="faq-a">By default it appears in the Name Bar. Uncheck <strong>Show contact in Name Bar</strong> under Design → Section Style → Contact Placement, then go to <strong>Sections → Contact</strong> to assign it to the Sidebar or Main Column instead.</div>
+        <div class="faq-a">By default it appears in the Name Bar. Uncheck <strong>Show contact in Name Bar</strong> under Design → Section Style → Contact Placement to move it to the Sidebar or Main Column.</div>
       </div>
 
       <div class="faq-section">
         <div class="faq-section-title">Editing Content</div>
         <div class="faq-q">Can I click directly on the resume to edit?</div>
-        <div class="faq-a">Yes. Hover over any text on the live preview — editable areas show a dashed outline. Click to type. Press <code>Enter</code> or click away to confirm.</div>
+        <div class="faq-a">Yes, with a few differences by content type:<br><br>
+          <strong>Text fields</strong> (bullets, job title, company, dates, summary, education) — click once to edit. Press <code>Enter</code> to confirm or click away.<br><br>
+          <strong>Bullets (Experience)</strong> — press <code>Enter</code> on a bullet to add a new one directly below. Press <code>Backspace</code> on an empty bullet to delete it and move focus to the one above.<br><br>
+          <strong>Skills (pill / outline style)</strong> — <strong>double-click</strong> a skill chip to edit it. Single-click + drag to reorder. Comma style: click once to edit, <code>Enter</code> to add a new item, <code>Backspace</code> on empty to delete.<br><br>
+          <strong>Certifications</strong> — same as Skills: double-click (pill/outline) or click (comma/plain) to edit; <code>Enter</code> to add, <code>Backspace</code> on empty to delete.
+        </div>
         <div class="faq-q">How do I add or remove sections?</div>
-        <div class="faq-a">Go to the <strong>Sections</strong> tab. Drag ⠿ to reorder (Contact cannot be reordered), click ▾ to expand, use <strong>▤ Main</strong> / <strong>◧ Sidebar</strong> to move columns, and <strong>✕ Remove</strong> to delete. The <strong>＋ Add</strong> dropdown at the bottom of each group lets you add Summary, Education, Skills, Certifications, Text Block, or List sections. Note: <strong>Experience</strong> is locked to the Main column and cannot be moved to the Sidebar.</div>
-        <div class="faq-q">Can I reorder sections on the live preview?</div>
-        <div class="faq-a">Yes. Hover over any section on the live preview to reveal the <strong>⠿ drag handle</strong> on the left. Click and drag it to reorder sections in place — the panel updates automatically and the scroll position is preserved.</div>
-
+        <div class="faq-a">Go to the <strong>Sections</strong> tab. Drag ⠿ to reorder (Contact cannot be reordered), click ▾ to expand, use <strong>▤ Main</strong> / <strong>◧ Sidebar</strong> to move columns, and <strong>✕ Remove</strong> to delete. The <strong>＋ Add</strong> dropdown lets you add Summary, Education, Skills, Certifications, Text Block, or List. Note: <strong>Experience</strong> is locked to the Main column; <strong>Contact</strong> cannot be reordered or moved.</div>
+        <div class="faq-q">Can I reorder sections and items on the live preview?</div>
+        <div class="faq-a">Yes — two levels of drag-reorder:<br><br>
+          <strong>Sections</strong> — hover any section to reveal the ⠿ handle, then drag to reorder. Contact cannot be dragged.<br><br>
+          <strong>Skills &amp; Certifications</strong> — drag individual chips to reorder them within their section. For pill/outline style, single-click+drag. For comma/plain style, drag the chip directly.
+        </div>
+        <div class="faq-q">How does Education display differently by location?</div>
+        <div class="faq-a">In the <strong>Main column</strong>, Education displays as two rows — School · Location on row 1, Degree · Dates on row 2. In the <strong>Sidebar</strong>, it stacks vertically: School, Location, Degree, Dates each on a separate line. School name and Location are styled by <strong>Company &amp; Location</strong> controls; Degree and Dates follow <strong>Body Text</strong>.</div>
       </div>
 
       <div class="faq-section">
         <div class="faq-section-title">Design &amp; Typography</div>
         <div class="faq-q">How do I change name bar alignment?</div>
-        <div class="faq-a"><strong>Spacing &amp; Align → Name Bar Alignment</strong> — available for <strong>Modern</strong> and <strong>Top Bar</strong> templates. Choices are Left, Center, and Right. Top Bar defaults to Center; Modern defaults to Left.</div>
+        <div class="faq-a"><strong>Spacing &amp; Align → Name Bar Alignment</strong> — available for <strong>Modern</strong> and <strong>Top Bar</strong> only. Choices are Left, Center, Right. Both templates default to Center.</div>
+        <div class="faq-q">Where do I change fonts?</div>
         <div class="faq-a">Design tab → Typography. Three groups: <strong>Heading &amp; Name</strong>, <strong>Contact</strong>, and <strong>Body Content</strong>. A live "Aa" specimen below each dropdown previews the typeface.</div>
-        <div class="faq-q">What does Body Text font size control?</div>
-        <div class="faq-a">Body Text applies to all content not covered by the specific controls above it — bullets, skills, certifications, education, summary, and custom text. Section Header, Company &amp; Location, and Job Title &amp; Date each have their own separate size controls.</div>
+        <div class="faq-q">What does Body Text control?</div>
+        <div class="faq-a">Body Text font size and style applies to: job titles, dates, bullets, skills, certifications, education degree, summary, and custom text. <strong>Company &amp; Location</strong> controls company name, location, school name, and education location separately.</div>
         <div class="faq-q">How do I change accent / section header color?</div>
-        <div class="faq-a">Design → Colors → <strong>Main</strong> → left swatch (Section Header accent). This drives divider lines, skill tag borders, and highlighted elements.</div>
+        <div class="faq-a">Design → Colors → <strong>Main</strong> → left swatch (Section Header). This also drives divider lines, skill tag borders, and highlighted elements. Default is black.</div>
         <div class="faq-q">Can I switch the panel between dark and light?</div>
-        <div class="faq-a">Yes — use the <strong>Theme ☀︎ / 🌙</strong> toggle in the top-right of the panel. This only affects the editor UI, not the resume output.</div>
+        <div class="faq-a">Yes — use the <strong>Theme ☀︎ / 🌙</strong> toggle in the top-right. This affects the editor UI only, not the resume output. The FAQ and modals also switch themes.</div>
+        <div class="faq-q">How do I reset spacing or margins?</div>
+        <div class="faq-a">Each spacing group in <strong>Spacing &amp; Align</strong> has its own reset button: <strong>Name &amp; Heading</strong>, <strong>Main Column</strong>, <strong>Sidebar</strong>, <strong>Line Spacing</strong>, and <strong>Page Margins</strong> each reset independently. Colors have a separate <strong>Reset All Colors</strong> button in the Design tab.</div>
       </div>
 
       <div class="faq-section">
         <div class="faq-section-title">Exporting</div>
         <div class="faq-q">How do I export to PDF?</div>
-        <div class="faq-a">Click <strong>⬇ Export PDF</strong> or press <code>Ctrl+P</code> / <code>⌘P</code>. In the print dialog, set destination to <strong>Save as PDF</strong>. The panel hides automatically. Use Chrome or Edge for best results.</div>
+        <div class="faq-a">Click <strong>⬇ Export PDF</strong> or press <code>Ctrl+P</code> / <code>⌘P</code>. In the print dialog, set destination to <strong>Save as PDF</strong> and Margins to <strong>None</strong>. The panel hides automatically. Use Chrome or Edge for best results.</div>
+        <div class="faq-q">Will margins be consistent on multi-page resumes?</div>
+        <div class="faq-a">Yes. Page margins set under <strong>Spacing &amp; Align → Page Margins</strong> apply consistently to every page via the browser's <code>@page</code> rule. Set Margins to <strong>None</strong> in Chrome's print dialog so browser defaults don't override them.</div>
         <div class="faq-q">Does the zoom level affect the PDF?</div>
-        <div class="faq-a">No. The preview zoom (+ / − bar) only affects what you see on screen. The PDF always exports at 100% regardless.</div>
+        <div class="faq-a">No. The preview zoom (+ / − bar) only affects what you see on screen. The PDF always exports at 100%.</div>
         <div class="faq-q">Why does the preview show a page break line?</div>
-        <div class="faq-a">When your content exceeds one page, a dashed red line and page counter appear at the boundary so you can see exactly where the break falls. This is a preview-only guide — it does not appear in the exported PDF.</div>
+        <div class="faq-a">When content exceeds one page, a dashed line and page counter appear at the boundary. This is preview-only — it does not appear in the exported PDF.</div>
       </div>
 
       <div class="faq-section">
         <div class="faq-section-title">Known Limitations</div>
         <div class="faq-limit">No Word (.docx) export — PDF via browser print only.</div>
         <div class="faq-limit">No image upload — profile photos or logos cannot be added.</div>
-        <div class="faq-limit">No cloud sync — sessions save to browser local storage only. Clearing browser data will erase them.</div>
+        <div class="faq-limit">No cloud sync — saves to browser local storage only. Clearing browser data will erase them.</div>
         <div class="faq-limit">No import from existing files — content must be entered manually.</div>
         <div class="faq-limit">Section-level color overrides are not supported — colors apply globally.</div>
         <div class="faq-limit">PDF rendering varies by browser — Chrome/Edge recommended.</div>
@@ -1348,9 +1365,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <div class="faq-tip">Save frequently with descriptive names (e.g. <em>Resume_TPM_v2</em>) to track versions.</div>
         <div class="faq-tip">Use <code>Ctrl+Z</code> freely — up to 50 undo steps are always available.</div>
         <div class="faq-tip">Use the Zoom + / − bar to inspect fine details without affecting the exported PDF.</div>
-        <div class="faq-tip">For ATS-safe resumes, use <strong>Standard</strong> or <strong>Top Bar</strong> — single-column layouts that applicant tracking systems parse cleanly.</div>
+        <div class="faq-tip">For ATS-safe resumes, use <strong>Standard</strong> or <strong>Top Bar</strong> — single-column layouts that parsers read cleanly.</div>
+        <div class="faq-tip">Set Margins to <strong>None</strong> in Chrome's print dialog so your <strong>Page Margins</strong> settings are the only source of spacing.</div>
+        <div class="faq-tip">Each spacing section has its own <strong>↺ Reset to Defaults</strong> button — use them independently to restore just what you changed.</div>
         <div class="faq-tip">Template thumbnails reflect your current accent and bar colors in real time.</div>
-        <div class="faq-tip"><strong>Reset All Colors</strong> and <strong>↺ Reset Spacing</strong> restore defaults if you get lost.</div>
         <div class="faq-tip">Drag the ⠿ handle on any section in the live preview to reorder without opening the Sections panel.</div>
       </div>
 
@@ -1393,28 +1411,28 @@ const SAVE_KEY = 'micheleAI_saves';
 
 let sections = [
   { id:'contact', title:'Contact', type:'contact', loc:'side', locked:true,
-    data:{ phone:'(000) 000-0000', email:'yourname@email.com',
-           linkedin:'https://linkedin.com/in/alexmorgan', linkedinLbl:'linkedin.com/in/alexmorgan',
+    data:{ phone:'(000) 000-0000', email:'user@email.com',
+           linkedin:'https://linkedin.com/in/yourprofile', linkedinLbl:'linkedin.com/in/yourprofile',
            location:'City, State', web:'', webLbl:'' }},
   { id:'s1', title:'Summary', type:'text', loc:'main',
     data:{ text:'[Sample] Results-driven professional with experience in [your field]. Replace this summary with 2–3 sentences highlighting your background, key strengths, and the value you bring.' }},
   { id:'s2', title:'Experience', type:'jobs', loc:'main', locked:true,
     data:{ jobs:[
-      { title:'Senior Product Manager', company:'Acme Cloud Inc', location:'City, State', dates:'Jan 2022 – Present',
+      { title:'Senior Product Manager', company:'Company 1', location:'City, State', dates:'Jan 2022 – Present',
         bullets:['[Sample] Led product strategy for a core platform, resulting in measurable revenue growth and improved customer retention.',
                  '[Sample] Defined and executed a multi-year roadmap, aligning engineering, design, and go-to-market teams on shared goals.',
                  '[Sample] Launched a new product capability that improved key customer satisfaction metrics within 6 months.',
                  '[Sample] Partnered with Sales and Customer Success to reduce churn through targeted feature development.']},
-      { title:'Product Manager', company:'Acme Cloud Inc', location:'City, State', dates:'Jun 2019 – Dec 2021',
+      { title:'Product Manager', company:'Company 1', location:'City, State', dates:'Jun 2019 – Dec 2021',
         bullets:['[Sample] Owned the integrations roadmap, delivering multiple third-party connectors that expanded market reach.',
                  '[Sample] Led a redesign effort based on user research that improved activation and engagement rates.']},
-      { title:'Associate Product Manager', company:'Bluewave Solutions', location:'City, State', dates:'Jul 2017 – May 2019',
+      { title:'Associate Product Manager', company:'Company 2', location:'City, State', dates:'Jul 2017 – May 2019',
         bullets:['[Sample] Collaborated with engineering to streamline onboarding, significantly reducing time-to-value for new users.',
                  '[Sample] Maintained a competitive intelligence framework used to inform quarterly product strategy reviews.',
                  '[Sample] Supported the launch of an enterprise security module with strong adoption across key accounts.']}
     ]}},
   { id:'s3', title:'Education', type:'education', loc:'main', locked:false,
-    data:{ items:[{ school:'Westfield State University', degree:'B.S. – Information Systems & Management', location:'City, State', dates:'May 2017' }]}},
+    data:{ items:[{ school:'School 1', degree:'B.S. – Information Systems & Management', location:'City, State', dates:'May 2017' }]}},
   { id:'s4', title:'Skills', type:'tags', loc:'side',
     data:{ tags:['Product Strategy','Roadmap Planning','Agile / Scrum','Stakeholder Management','User Research','Data Analysis','A/B Testing','Go-to-Market','SQL','Figma','JIRA','Salesforce'], columns:1, compact:false }},
   { id:'s5', title:'Certifications', type:'list', loc:'side',
@@ -1423,12 +1441,12 @@ let sections = [
 
 const st = {
   layout:'classic',
-  acc:'#1e3a4a', txt:'#1a1a1a', sbg:'#1e3a4a', stxt:'#ffffff',
+  acc:'#1a1a1a', txt:'#1a1a1a', sbg:'#1a1a1a', stxt:'#ffffff',
   contactMainColor:'#1a1a1a', contactSideColor:'#ffffff', contactFontSize:11, contactFontFamily:'Arial,sans-serif',
   contactBold:false, contactItalic:false, contactUnderline:false,
   fh:'Arial,sans-serif', fb:'Arial,sans-serif', fc:'Arial,sans-serif',
   bs:12, ss:13, sw:33,
-  nameBarBg:'#1e3a4a', nameBarTxt:'#ffffff', nameBarSub:'#ffffff',
+  nameBarBg:'#1a1a1a', nameBarTxt:'#ffffff', nameBarSub:'#ffffff',
   nameBarH:80, nameBarFontSize:30, taglineFontSize:14,
   nameBarBold:false, nameBarItalic:false, nameBarUnderline:false,
   nameAlign:'center', barContactInBar:true, barContactSep:'pipe', barContactSpacing:10,
@@ -2039,6 +2057,9 @@ const Render = {
   },
 
   _renderPages(wrap, html, paper) {
+    const mt = st.mt || 0, mb = st.mb || 0, ml = st.ml || 0, mr = st.mr || 0;
+    const usableH = Math.max(1, paper.h - mt - mb);
+
     const tmp = document.createElement('div');
     tmp.style.cssText = `position:absolute;visibility:hidden;width:${paper.w}px`;
     tmp.innerHTML = html;
@@ -2046,29 +2067,57 @@ const Render = {
     const totalH = tmp.scrollHeight;
     document.body.removeChild(tmp);
 
-    const pages = Math.max(1, Math.ceil(totalH / paper.h));
+    const contentH = Math.max(usableH, totalH - mt - mb);
+    const pages    = Math.max(1, Math.ceil(contentH / usableH));
+
+    const hasSidebar = st.layout === 'classic' || st.layout === 'sidebar';
+    const sideOnLeft = (st.sidePos || 'left') === 'left';
+    const sw         = st.sw || 33;
+    const stripLeft  = sideOnLeft ? 0 : Math.round(paper.w * (100 - sw) / 100);
+    const stripWidth = Math.round(paper.w * sw / 100);
+
     for (let p = 0; p < pages; p++) {
       const page = document.createElement('div');
       page.className = 'rpage';
-      page.style.cssText = `width:${paper.w}px;height:${paper.h}px;overflow:hidden;position:relative`;
+      page.style.cssText = `width:${paper.w}px;height:${paper.h}px;overflow:hidden;position:relative;background:#fff`;
+
+      if (hasSidebar) {
+        const strip = document.createElement('div');
+        strip.style.cssText = `position:absolute;top:0;bottom:0;left:${stripLeft}px;width:${stripWidth}px;background:${st.sbg};z-index:0;pointer-events:none`;
+        page.appendChild(strip);
+      }
+
       const inner = document.createElement('div');
-      inner.style.cssText = `position:absolute;top:${-p * paper.h}px;left:0;width:100%`;
+      inner.style.cssText = `position:absolute;top:${-p * usableH}px;left:0;width:100%;z-index:1`;
       inner.innerHTML = html;
       page.appendChild(inner);
-      // Page break overlay — only show when content bleeds to next page
+
+      if (Render._showMarginGuides) {
+        const addGuide = css => {
+          const g = document.createElement('div');
+          g.className = 'margin-guide';
+          g.style.cssText = css + ';pointer-events:none;z-index:6';
+          page.appendChild(g);
+        };
+        if (mt > 0) addGuide(`position:absolute;top:${mt}px;left:0;right:0;height:0;border-top:1px dashed rgba(100,140,220,0.6)`);
+        if (mb > 0) addGuide(`position:absolute;bottom:${mb}px;left:0;right:0;height:0;border-top:1px dashed rgba(100,140,220,0.6)`);
+        if (ml > 0) addGuide(`position:absolute;top:0;bottom:0;left:${ml}px;width:0;border-left:1px dashed rgba(100,140,220,0.6)`);
+        if (mr > 0) addGuide(`position:absolute;top:0;bottom:0;right:${mr}px;width:0;border-right:1px dashed rgba(100,140,220,0.6)`);
+      }
+
       if (pages > 1 && p < pages - 1) {
         const overlay = document.createElement('div');
         overlay.className = 'pb-overlay';
-        overlay.style.top = (paper.h - 1) + 'px';
+        overlay.style.top = (paper.h - mb - 1) + 'px';
         page.appendChild(overlay);
       }
+      wrap.appendChild(page);
       if (p < pages - 1) {
         const pb = document.createElement('div');
         pb.className = 'page-break-indicator';
         pb.innerHTML = `<span>Page ${p + 1} / ${pages}</span>`;
         wrap.appendChild(pb);
       }
-      wrap.appendChild(page);
     }
   },
 
@@ -2092,7 +2141,7 @@ const Render = {
 
     return `<div class="rresume" style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt};display:flex;flex-direction:column;min-height:${paper.h}px">
       ${nameBar}
-      <div style="display:flex;flex:1;align-items:stretch">${cols}</div>
+      <div class="r-cols" style="display:flex;flex:1;align-items:stretch">${cols}</div>
     </div>`;
   },
 
@@ -2104,7 +2153,7 @@ const Render = {
     const sideOnLeft = (st.sidePos || 'left') === 'left';
 
     const sideHtml = `<div class="r-side" style="width:${sw}%;background:${st.sbg};color:${st.stxt};padding:${st.mt}px ${st.ml*0.6|0}px ${st.mb}px ${sideOnLeft?st.ml:st.ml*0.6|0}px">
-      <div class="r-name-sb" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.stxt};margin-bottom:12px;font-weight:700">${esc(($('h-name')||{}).value||'Your Name')}</div>
+      <div class="r-name-sb ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.stxt};margin-bottom:12px;font-weight:700">${esc(($('h-name')||{}).value||'Your Name')}</div>
       ${this._buildContactBlock(contactSec)}
       ${sideSecs.map(s => this._renderSectionHTML(s)).join('')}
     </div>`;
@@ -2113,7 +2162,7 @@ const Render = {
     </div>`;
     const cols = sideOnLeft ? sideHtml + mainHtml : mainHtml + sideHtml;
 
-    return `<div class="rresume" style="display:flex;align-items:stretch;min-height:${paper.h}px;font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">${cols}</div>`;
+    return `<div class="rresume" style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}"><div class="r-cols" style="display:flex;align-items:stretch">${cols}</div></div>`;
   },
 
   _buildTop(paper) {
@@ -2123,7 +2172,7 @@ const Render = {
 
     const topAlign = st.nameAlign === 'center' ? 'center' : st.nameAlign === 'right' ? 'right' : 'left';
     const header = `<div style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:${st.mt*0.8|0}px ${st.ml}px;color:${st.nameBarTxt};text-align:${topAlign};display:flex;flex-direction:column;justify-content:center">
-      <div style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:700">${esc(nameVal)}</div>
+      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:700">${esc(nameVal)}</div>
       <div style="font-size:${st.contactFontSize}px;margin-top:6px">${this._inlineContactHTML(contactSec)}</div>
     </div>`;
 
@@ -2148,7 +2197,7 @@ const Render = {
       <div style="padding:${st.mt}px ${st.mr}px ${Math.round(st.mt*0.3)}px ${st.ml}px;text-align:center">
         <div class="ie-hdr r-name" data-field="hname" style="font-size:${st.nameBarFontSize}px;font-family:${st.fh};font-weight:700;color:${st.txt};letter-spacing:.01em">${esc(nameVal)}</div>
         ${titleVal ? `<div class="ie-hdr" data-field="htitle" style="font-size:${st.taglineFontSize}px;color:${st.txt};margin-top:2px">${esc(titleVal)}</div>` : ''}
-        ${contactLine ? `<div style="font-size:${st.contactFontSize}px;color:${st.contactMainColor};margin-top:4px;line-height:1.6">${contactLine}</div>` : ''}
+        ${contactLine ? `<div style="font-size:${st.contactFontSize}px;color:${st.txt};margin-top:4px;line-height:1.6">${contactLine}</div>` : ''}
       </div>
       <div style="padding:${Math.round(st.msg*0.5)}px ${st.mr}px ${st.mb}px ${st.ml}px;font-size:${st.bs}px">
         ${mainSecs.map(s => this._renderSectionHTML(s)).join('')}
@@ -2300,7 +2349,7 @@ const Render = {
       const loc = jobs[0].job.location || '';
       const coStyle  = `font-family:${st.companyFontFamily};font-size:${st.companyFontSize}px;color:${coColor};` + this._styleStr('coLoc');
       const locStyle = `font-size:${st.companyFontSize}px;color:${coColor};` + this._styleStr('coLoc');
-      const jtStyle  = this._styleStr('jtDate');
+      const jtStyle  = this._styleStr('body');
       const bStyle   = this._styleStr('body');
 
       // Company row: name left, location right (matching backup layout)
@@ -2312,9 +2361,11 @@ const Render = {
       const rolesHTML = jobs.map(({ job, ji }) => {
         const indent = 0;
         const bullSymbol = st.bulletStyle === 'bullet' ? '•' : st.bulletStyle === 'arrow' ? '›' : '–';
-        const bullsHTML = job.bullets.filter(b => b.trim()).map(b =>
-          `<li class="ie-text" data-sid="${sec.id}" data-ji="${ji}" data-bi="${job.bullets.indexOf(b)}" data-field="bullet" style="${bStyle};margin-bottom:${compact?1:3}px">${esc(b)}</li>`
-        ).join('');
+        const bullsHTML = job.bullets.map((b, bi) => ({ b, bi }))
+          .filter(({ b }) => b !== undefined && b !== null)
+          .map(({ b, bi }) =>
+            `<li class="ie-text" data-sid="${sec.id}" data-ji="${ji}" data-bi="${bi}" data-field="bullet" style="${bStyle};margin-bottom:${compact?1:3}px">${b ? esc(b) : '&nbsp;'}</li>`
+          ).join('');
 
         // Title row: job title left, dates right
         const titleRow = `<div class="r-role-hdr" style="margin-bottom:${compact?1:2}px">
@@ -2342,6 +2393,9 @@ const Render = {
     const bodyDeco  = this._styleStr('body');
     const bodyStyle = bodyBase + bodyDeco;
 
+    // Location: Company & Location font size/style
+    const locStyle  = `font-size:${st.companyFontSize}px;color:${bodyColor};font-family:${st.companyFontFamily};line-height:${st.lineHeight};` + this._styleStr('coLoc');
+
     return sec.data.items.map((item, ei) => {
       const compact = sec.data.compact || false;
       const mb = compact ? (st.msp * 0.4 | 0) : (st.msp * 0.6 | 0);
@@ -2350,9 +2404,9 @@ const Render = {
         // Sidebar: stacked — School / Location / Degree / Dates each on own line
         return `<div class="r-edu" style="margin-bottom:${mb}px;break-inside:avoid">
           <div class="ie-text" data-sid="${sec.id}" data-field="school" data-ei="${ei}"
-            style="${bodyBase}font-weight:700">${esc(item.school||'')}</div>
+            style="${locStyle}font-weight:700">${esc(item.school||'')}</div>
           ${item.location ? `<div class="ie-text" data-sid="${sec.id}" data-field="eloc" data-ei="${ei}"
-            style="${bodyStyle}">${esc(item.location)}</div>` : ''}
+            style="${locStyle}">${esc(item.location)}</div>` : ''}
           ${item.degree ? `<div class="ie-text" data-sid="${sec.id}" data-field="degree" data-ei="${ei}"
             style="${bodyStyle}">${esc(item.degree)}</div>` : ''}
           ${item.dates ? `<div class="ie-text" data-sid="${sec.id}" data-field="edates" data-ei="${ei}"
@@ -2364,9 +2418,9 @@ const Render = {
       return `<div class="r-edu" style="margin-bottom:${mb}px;break-inside:avoid">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
           <div class="ie-text" data-sid="${sec.id}" data-field="school" data-ei="${ei}"
-            style="${bodyBase}font-weight:700;flex:1;min-width:0">${esc(item.school||'')}</div>
+            style="${locStyle}font-weight:700;flex:1;min-width:0">${esc(item.school||'')}</div>
           <div class="ie-text" data-sid="${sec.id}" data-field="eloc" data-ei="${ei}"
-            style="${bodyStyle};text-align:right;white-space:nowrap;flex-shrink:0;min-width:0">${esc(item.location||'')}</div>
+            style="${locStyle};text-align:right;white-space:nowrap;flex-shrink:0;min-width:0">${esc(item.location||'')}</div>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:1px">
           <div class="ie-text" data-sid="${sec.id}" data-field="degree" data-ei="${ei}"
@@ -2452,6 +2506,7 @@ const Render = {
 
   // ── Inline editors ─────────────────────────────────────
   _ieActive: false,
+  _showMarginGuides: false,
 
   _attachInlineEditors() {
     $$('.ie-hdr').forEach(el => {
@@ -2474,19 +2529,159 @@ const Render = {
     });
 
     $$('.ie-text').forEach(el => {
-      el.contentEditable = 'true';
+      // pill/outline skill tags: keep non-editable by default so drag works;
+      // enable editing on dblclick only. Comma-style tags are always editable.
+      const isPillDraggable = el.classList.contains('stag-draggable') && el.classList.contains('skill-tag');
+      el.contentEditable = isPillDraggable ? 'false' : 'true';
       el.spellcheck = false;
+      if (isPillDraggable) {
+        el.addEventListener('dblclick', () => {
+          el.contentEditable = 'true';
+          el.draggable = false;
+          el.focus();
+          const r = document.createRange(); r.selectNodeContents(el); r.collapse(false);
+          window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+        });
+      }
       el.addEventListener('focus', () => {
         Render._ieActive = true;
-        if (el.classList.contains('stag-draggable')) el.draggable = false; // pause drag while editing
+        if (el.classList.contains('stag-draggable')) el.draggable = false;
       });
+      let _bulletOpInProgress = false; // guard: prevent blur double-firing after Enter/Backspace bullet ops
       el.addEventListener('keydown', e => {
-        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); }
-        if (e.key === 'Escape') el.blur();
+        const field = el.dataset.field;
+        if (e.key === 'Escape') { el.blur(); return; }
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          if (field === 'bullet') {
+            const sid = el.dataset.sid, ji = parseInt(el.dataset.ji), bi = parseInt(el.dataset.bi);
+            const sec = getSec(sid);
+            if (sec && !isNaN(ji) && !isNaN(bi)) {
+              const cur = el.innerText.trim();
+              sec.data.jobs[ji].bullets[bi] = cur;
+              History.push();
+              sec.data.jobs[ji].bullets.splice(bi + 1, 0, '');
+              _bulletOpInProgress = true;
+              Panel.rebuildKeepOpen();
+              setTimeout(() => {
+                _bulletOpInProgress = false;
+                const candidates = document.querySelectorAll(
+                  `.ie-text[data-field="bullet"][data-sid="${sid}"][data-ji="${ji}"][data-bi="${bi+1}"]`
+                );
+                const newBullet = Array.from(candidates).find(c => {
+                  const r = c.getBoundingClientRect();
+                  return r.width > 0 && r.height > 0;
+                }) || candidates[0];
+                if (newBullet) newBullet.focus();
+              }, 80);
+            }
+          } else if (field === 'tag' || field === 'listitem') {
+            const sid = el.dataset.sid, ti = parseInt(el.dataset.ti ?? el.dataset.bi);
+            const sec = getSec(sid);
+            if (sec && !isNaN(ti)) {
+              const cur = el.innerText.trim();
+              const arr = field === 'tag' ? sec.data.tags : sec.data.items;
+              arr[ti] = cur;
+              History.push();
+              arr.splice(ti + 1, 0, '');
+              _bulletOpInProgress = true;
+              Panel.rebuildKeepOpen();
+              setTimeout(() => {
+                _bulletOpInProgress = false;
+                const allNext = [
+                  ...document.querySelectorAll(`.ie-text[data-field="${field}"][data-sid="${sid}"][data-ti="${ti+1}"]`),
+                  ...document.querySelectorAll(`.ie-text[data-field="${field}"][data-sid="${sid}"][data-bi="${ti+1}"]`)
+                ];
+                const next = allNext.find(c => { const r = c.getBoundingClientRect(); return r.width > 0 && r.height > 0; }) || allNext[0];
+                if (next) {
+                  // Pill/filled tags start as non-editable for drag — unlock before focusing
+                  next.contentEditable = 'true';
+                  next.draggable = false;
+                  next.focus();
+                  const r = document.createRange(); r.selectNodeContents(next); r.collapse(false);
+                  window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+                }
+              }, 80);
+            }
+          } else {
+            el.blur();
+          }
+          return;
+        }
+        if (e.key === 'Backspace' && (field === 'bullet' || field === 'tag' || field === 'listitem')) {
+          const isEmpty = el.innerText.trim() === '';
+          if (isEmpty) {
+            e.preventDefault();
+            if (field === 'bullet') {
+              const sid = el.dataset.sid, ji = parseInt(el.dataset.ji), bi = parseInt(el.dataset.bi);
+              const sec = getSec(sid);
+              if (sec && !isNaN(ji) && !isNaN(bi) && sec.data.jobs[ji].bullets.length > 1) {
+                History.push();
+                sec.data.jobs[ji].bullets.splice(bi, 1);
+                const targetBi = Math.max(0, bi - 1);
+                _bulletOpInProgress = true;
+                Panel.rebuildKeepOpen();
+                setTimeout(() => {
+                  _bulletOpInProgress = false;
+                  // querySelectorAll because multi-page preview duplicates DOM — pick the visible copy
+                  const candidates = document.querySelectorAll(
+                    `.ie-text[data-field="bullet"][data-sid="${sid}"][data-ji="${ji}"][data-bi="${targetBi}"]`
+                  );
+                  const prev = Array.from(candidates).find(c => {
+                    const r = c.getBoundingClientRect();
+                    return r.width > 0 && r.height > 0;
+                  }) || candidates[0];
+                  if (prev) {
+                    prev.focus();
+                    const r = document.createRange(); r.selectNodeContents(prev); r.collapse(false);
+                    window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+                  }
+                }, 80);
+              }
+            } else {
+              const sid = el.dataset.sid, ti = parseInt(el.dataset.ti ?? el.dataset.bi);
+              const sec = getSec(sid);
+              const arr = field === 'tag' ? sec?.data.tags : sec?.data.items;
+              if (arr && arr.length > 1 && !isNaN(ti)) {
+                History.push();
+                arr.splice(ti, 1);
+                const targetTi = Math.max(0, ti - 1);
+                _bulletOpInProgress = true;
+                Panel.rebuildKeepOpen();
+                setTimeout(() => {
+                  _bulletOpInProgress = false;
+                  const candidates = document.querySelectorAll(
+                    `.ie-text[data-field="${field}"][data-sid="${sid}"][data-ti="${targetTi}"]`
+                  );
+                  const altCandidates = document.querySelectorAll(
+                    `.ie-text[data-field="${field}"][data-sid="${sid}"][data-bi="${targetTi}"]`
+                  );
+                  const all = candidates.length ? candidates : altCandidates;
+                  const prev = Array.from(all).find(c => {
+                    const r = c.getBoundingClientRect();
+                    return r.width > 0 && r.height > 0;
+                  }) || all[0];
+                  if (prev) {
+                    // Pill/filled tags start as non-editable for drag — unlock before focusing
+                    prev.contentEditable = 'true';
+                    prev.draggable = false;
+                    prev.focus();
+                    const r = document.createRange(); r.selectNodeContents(prev); r.collapse(false);
+                    window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+                  }
+                }, 80);
+              }
+            }
+          }
+        }
       });
       el.addEventListener('blur', () => {
         Render._ieActive = false;
-        if (el.classList.contains('stag-draggable')) el.draggable = true; // re-enable drag after editing
+        if (el.classList.contains('stag-draggable')) {
+          el.draggable = true;
+          if (el.classList.contains('skill-tag')) el.contentEditable = 'false'; // restore drag-ready state
+        }
+        if (_bulletOpInProgress) return; // bullet op handled its own save — skip blur processing
         History.push();
         const { sid, field, ji, bi, ei, co } = el.dataset;
         const val = el.innerText.trim();
@@ -2623,8 +2818,8 @@ const Render = {
 // ═══════════════════════════════════════════════════════════════
 const Design = {
   updateThumbnails() {
-    const barColor  = st.nameBarBg || '#1e3a4a';
-    const accColor  = st.acc || '#1e3a4a';
+    const barColor  = st.nameBarBg || '#1a1a1a';
+    const accColor  = st.acc || '#1a1a1a';
     const sideColor = st.sbg || '#2d2d2d';
     $$('.tname,.thdr').forEach(el => el.style.background = barColor);
     $$('.ts').forEach(el => el.style.background = barColor);
@@ -2740,7 +2935,7 @@ const Design = {
 
   resetAllColors() {
     History.push();
-    const defaults = {'c-acc':'#1e3a4a','c-txt':'#1a1a1a','c-sbg':'#1e3a4a','c-stxt':'#ffffff','c-nbar-bg':'#1e3a4a','c-nbar-txt':'#ffffff'};
+    const defaults = {'c-acc':'#1a1a1a','c-txt':'#1a1a1a','c-sbg':'#1a1a1a','c-stxt':'#ffffff','c-nbar-bg':'#1a1a1a','c-nbar-txt':'#ffffff'};
     const keyMap   = {'c-acc':'acc','c-txt':'txt','c-sbg':'sbg','c-stxt':'stxt','c-nbar-bg':'nameBarBg','c-nbar-txt':'nameBarTxt'};
     Object.keys(defaults).forEach(id => {
       const el = $(id); if (!el) return;
@@ -2762,10 +2957,42 @@ const Design = {
 
   resetSpacing() {
     History.push();
-    Object.assign(st, {mt:20,mb:48,ml:48,mr:48,msg:18,msp:10,ssg:32,ssp:10,lineHeight:1.5,lineHeightCustom:1.5});
+    Object.assign(st, {msg:18,msp:10,ssg:32,ssp:10,lineHeight:1.5,lineHeightCustom:1.5});
     this.syncControls();
     Render.resume();
-    UI.showToast('↺ Spacing reset');
+    UI.showToast('↺ Line spacing reset');
+  },
+
+  resetMargins() {
+    History.push();
+    Object.assign(st, {mt:20,mb:48,ml:48,mr:48});
+    this.syncControls();
+    Render.resume();
+    UI.showToast('↺ Margins reset');
+  },
+
+  resetNameHeading() {
+    History.push();
+    Object.assign(st, {nameBarH:80});
+    this.syncControls();
+    Render.resume();
+    UI.showToast('↺ Name & Heading reset');
+  },
+
+  resetMainColumn() {
+    History.push();
+    Object.assign(st, {msp:10});
+    this.syncControls();
+    Render.resume();
+    UI.showToast('↺ Main Column reset');
+  },
+
+  resetSidebar() {
+    History.push();
+    Object.assign(st, {sw:33, ssg:32, ssp:10});
+    this.syncControls();
+    Render.resume();
+    UI.showToast('↺ Sidebar reset');
   },
 
   syncControls() {
@@ -2779,7 +3006,7 @@ const Design = {
     // Ranges
     const rangeMap = [
       ['r-nbh','v-nbh','nameBarH'],['r-nbfs','v-nbfs','nameBarFontSize'],
-      ['r-bs','v-bs','bs'],['r-bbs','v-bbs','bs'],['r-nfs','v-nfs','nameBarFontSize'],
+      ['r-bbs','v-bbs','bs'],['r-nfs','v-nfs','nameBarFontSize'],
       ['r-ss','v-ss','ss'],['r-sw','v-sw','sw'],
       ['r-cfs','v-cfs','contactFontSize'],['r-cofs','v-cofs','companyFontSize'],
        ['r-mt','v-mt','mt'],['r-mb','v-mb','mb'],['r-ml','v-ml','ml'],['r-mr','v-mr','mr'],
@@ -2804,7 +3031,7 @@ const Design = {
     _ts('hn-bold',st.nameBarBold);_ts('hn-italic',st.nameBarItalic);_ts('hn-underline',st.nameBarUnderline);
     _ts('sh-bold',st.secHdrBold);_ts('sh-italic',st.secHdrItalic);_ts('sh-underline',st.secHdrUnderline);
     _ts('cl-bold',st.coLocBold);_ts('cl-italic',st.coLocItalic);_ts('cl-underline',st.coLocUnderline);
-    _ts('jd-bold',st.jtDateBold);_ts('jd-italic',st.jtDateItalic);_ts('jd-underline',st.jtDateUnderline);
+    
     _ts('bt-bold',st.bodyBold);_ts('bt-italic',st.bodyItalic);_ts('bt-underline',st.bodyUnderline);
     Design.updateSkillCertDropdowns();
     // Contact font
@@ -2845,7 +3072,7 @@ const Design = {
 
   bindAllRanges() {
     [['r-nbh','v-nbh','nameBarH'],['r-nbfs','v-nbfs','nameBarFontSize'],
-     ['r-bs','v-bs','bs'],['r-bbs','v-bbs','bs'],['r-nfs','v-nfs','nameBarFontSize'],
+     ['r-bbs','v-bbs','bs'],['r-nfs','v-nfs','nameBarFontSize'],
      ['r-ss','v-ss','ss'],['r-sw','v-sw','sw','','%'],
      ['r-cfs','v-cfs','contactFontSize'],['r-cofs','v-cofs','companyFontSize'],
      ['r-mt','v-mt','mt'],['r-mb','v-mb','mb'],['r-ml','v-ml','ml'],['r-mr','v-mr','mr'],
@@ -2893,6 +3120,16 @@ function tst(k,id)            { Design.toggleStyle(k,id); }
 function resetAllColors()     { Design.resetAllColors(); }
 function resetColor(id,k,v)   { Design.resetColor(id,k,v); }
 function resetSpacing()       { Design.resetSpacing(); }
+function resetMargins()        { Design.resetMargins(); }
+function toggleMarginGuides()  {
+  Render._showMarginGuides = !Render._showMarginGuides;
+  const btn = document.getElementById('toggle-margins-btn');
+  if (btn) btn.textContent = Render._showMarginGuides ? '◼ Hide Margin Lines' : '◻ Show Margin Lines';
+  Render.resume();
+}
+function resetNameHeading()    { Design.resetNameHeading(); }
+function resetMainColumn()     { Design.resetMainColumn(); }
+function resetSidebar()        { Design.resetSidebar(); }
 function brange(r,v,k,i,u)   { Design.bindRange(r,v,k,i,u); }
 function updateFontSpecimen(s,p) { Design.updateFontSpecimen(s,p); }
 
@@ -3061,45 +3298,193 @@ const UI = {
                        top:Render._buildTop, standard:Render._buildStandard };
     const html = (builders[st.layout] || builders.classic).call(Render, paper);
 
-    // Create isolated print container — browser paginates naturally
+    const hasSidebarLayout = st.layout === 'classic' || st.layout === 'sidebar';
+    const sideOnLeft = (st.sidePos || 'left') === 'left';
+    const swPct = st.sw || 33;
+
+    // Measure content height accurately: render at full paper width, visible, off-screen
+    const measurer = document.createElement('div');
+    measurer.style.cssText = `position:fixed;top:0;left:-${paper.w+20}px;width:${paper.w}px;visibility:hidden`;
+    measurer.innerHTML = html;
+    const rMeasure = measurer.querySelector('.rresume,[class*="rresume"]') || measurer.firstElementChild;
+    if (rMeasure) rMeasure.style.width = '100%';
+    document.body.appendChild(measurer);
+    const totalPrintH = measurer.scrollHeight;
+    document.body.removeChild(measurer);
+
+    const pmt = st.mt || 0, pmb = st.mb || 0;
+    const contentH = paper.h - pmt - pmb; // usable height per continuation page
+
+    const isModernLayout = st.layout === 'classic';
+
+    // ── Modern + Top Bar + Standard: extract fixed header and body separately ──────
+    const isTopBarLayout   = st.layout === 'top';
+    const isStandardLayout = st.layout === 'standard';
+    const hasSplitHeader   = isModernLayout || isTopBarLayout || isStandardLayout;
+    let headerHTML = '', bodyHTML = html, headerH = 0, bodyHTMLH = totalPrintH;
+
+    if (hasSplitHeader) {
+      const tmpParse = document.createElement('div');
+      tmpParse.style.cssText = `position:fixed;left:-${paper.w+20}px;top:0;width:${paper.w}px;visibility:hidden`;
+      tmpParse.innerHTML = html;
+      document.body.appendChild(tmpParse);
+
+      // Standard has no .rresume class — outer div is tmpParse.firstElementChild
+      const hdrEl = isModernLayout
+        ? tmpParse.querySelector('.r-namebar')
+        : isTopBarLayout
+          ? tmpParse.querySelector('.rresume > div:first-child')
+          : tmpParse.firstElementChild && tmpParse.firstElementChild.firstElementChild; // Standard: first child of outer div
+      const bodyEl = isModernLayout
+        ? tmpParse.querySelector('.r-cols')
+        : isTopBarLayout
+          ? tmpParse.querySelector('.rresume > div:nth-child(2)')
+          : tmpParse.firstElementChild && tmpParse.firstElementChild.lastElementChild;  // Standard: last child of outer div
+
+      if (hdrEl) {
+        headerH = hdrEl.getBoundingClientRect().height || (st.nameBarH || 80);
+        hdrEl.style.height    = headerH + 'px';
+        hdrEl.style.minHeight = headerH + 'px';
+        hdrEl.style.maxHeight = headerH + 'px';
+        hdrEl.style.overflow  = 'hidden';
+        // Top Bar only: strip internal padding-top so bar sits flush at page top.
+        // Standard keeps its padding-top intact — it IS the top margin.
+        if (isTopBarLayout) hdrEl.style.paddingTop = '0';
+        headerHTML = hdrEl.outerHTML;
+      }
+
+      if (bodyEl) {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = `width:100%;color:${st.txt};font-family:${st.fb};font-size:${st.bs}px`;
+        if (isModernLayout) wrap.style.display = 'flex';
+        // Standard: plain block wrapper — its body div already has correct padding/font-size
+        wrap.appendChild(bodyEl.cloneNode(true));
+        bodyHTML = wrap.outerHTML;
+      }
+
+      document.body.removeChild(tmpParse);
+
+      const bodyMeasurer = document.createElement('div');
+      bodyMeasurer.style.cssText = `position:fixed;left:-${paper.w+20}px;top:0;width:${paper.w}px;visibility:hidden`;
+      bodyMeasurer.innerHTML = bodyHTML;
+      document.body.appendChild(bodyMeasurer);
+      bodyHTMLH = bodyMeasurer.scrollHeight;
+      document.body.removeChild(bodyMeasurer);
+    }
+
+    const page1BodyH = hasSplitHeader ? Math.max(1, paper.h - headerH - pmb) : contentH;
+
+    let printPages;
+    if (hasSplitHeader) {
+      printPages = bodyHTMLH <= page1BodyH
+        ? 1
+        : 1 + Math.max(1, Math.ceil((bodyHTMLH - page1BodyH) / contentH));
+    } else {
+      printPages = Math.max(1, Math.ceil(totalPrintH / paper.h));
+    }
+    // ────────────────────────────────────────────────────────────────────
+
+    // Build pre-sliced pages — each page gets its own sidebar strip and one page of clipped content
     const frame = document.createElement('div');
     frame.id = 'print-frame';
     frame.style.cssText = 'position:fixed;left:-9999px;top:0;pointer-events:none';
-    frame.innerHTML = html;
-    // Override rresume width so it fills the print page, not the fixed 816px preview width
-    const rresume = frame.querySelector('.rresume,[class*="rresume"]') || frame.firstElementChild;
-    if (rresume) rresume.style.width = '100%';
+
+    for (let p = 0; p < printPages; p++) {
+      const pageDiv = document.createElement('div');
+      pageDiv.className = 'print-page';
+
+      // Sidebar strip: full page height, behind everything
+      if (hasSidebarLayout) {
+        const stripLeft = sideOnLeft ? 0 : Math.round(paper.w * (100 - swPct) / 100);
+        const stripW    = Math.round(paper.w * swPct / 100);
+        const strip = document.createElement('div');
+        strip.className = 'print-sidebar-strip';
+        strip.style.cssText = `position:absolute;top:0;left:${stripLeft}px;width:${stripW}px;height:${paper.h}px;background:${st.sbg}`;
+        pageDiv.appendChild(strip);
+      }
+
+      if (p === 0 && hasSplitHeader) {
+        // ── Modern / Top Bar page 1 ────────────────────────────────────
+        // Header: fixed exact height, flush at top:0, cannot bleed
+        const hdrWrap = document.createElement('div');
+        hdrWrap.style.cssText = `position:absolute;top:0;left:0;width:100%;height:${headerH}px;overflow:hidden;z-index:1`;
+        hdrWrap.innerHTML = headerHTML;
+        pageDiv.appendChild(hdrWrap);
+
+        // Body content: clip zone from headerH to page bottom-margin
+        const bodyClip = document.createElement('div');
+        bodyClip.style.cssText = `position:absolute;top:${headerH}px;left:0;width:100%;height:${page1BodyH}px;overflow:hidden;z-index:2`;
+        const inner = document.createElement('div');
+        inner.style.cssText = `position:absolute;top:0;left:0;width:100%`;
+        inner.innerHTML = bodyHTML;
+        // Strip padding-top on columns/main so content starts at clip zone edge
+        inner.querySelectorAll('.r-side,.r-main').forEach(el => {
+          el.style.paddingTop    = pmt + 'px';
+          el.style.paddingBottom = '0';
+        });
+        bodyClip.appendChild(inner);
+        pageDiv.appendChild(bodyClip);
+
+      } else if (hasSplitHeader) {
+        // ── Modern / Top Bar continuation pages ───────────────────────
+        const clipZone = document.createElement('div');
+        clipZone.style.cssText = `position:absolute;top:${pmt}px;left:0;width:100%;height:${contentH}px;overflow:hidden;z-index:1`;
+        const bodyOffset = page1BodyH + (p - 1) * contentH;
+        const inner = document.createElement('div');
+        inner.style.cssText = `position:absolute;top:${-bodyOffset}px;left:0;width:100%`;
+        inner.innerHTML = bodyHTML;
+        inner.querySelectorAll('.r-side,.r-main').forEach(el => {
+          el.style.paddingTop    = '0';
+          el.style.paddingBottom = '0';
+        });
+        clipZone.appendChild(inner);
+        pageDiv.appendChild(clipZone);
+
+      } else {
+        // ── All non-Modern templates ───────────────────────────────────
+        const clipZone = document.createElement('div');
+        clipZone.style.cssText = `position:absolute;top:${pmt}px;left:0;width:100%;height:${contentH}px;overflow:hidden;z-index:1`;
+        const contentOffset = -p * contentH;
+        const inner = document.createElement('div');
+        inner.style.cssText = `position:absolute;top:${contentOffset}px;left:0;width:100%`;
+        inner.innerHTML = html;
+        const rEl = inner.querySelector('.rresume,[class*="rresume"]') || inner.firstElementChild;
+        if (rEl) { rEl.style.width='100%'; rEl.style.minHeight='0'; }
+        inner.querySelectorAll('.r-side,.r-main').forEach(el => {
+          el.style.paddingTop    = '0';
+          el.style.paddingBottom = '0';
+        });
+        clipZone.appendChild(inner);
+        pageDiv.appendChild(clipZone);
+      }
+
+      frame.appendChild(pageDiv);
+    }
+
     document.body.appendChild(frame);
 
-    // Inject @media print style
     const old = document.getElementById('temp-print-style');
     if (old) old.remove();
     const ps = document.createElement('style');
     ps.id = 'temp-print-style';
     ps.textContent = `
       @media print {
-        @page { size:${szMap[st.paper]||'letter portrait'}; margin:${toIn(st.mt)} ${toIn(st.mr)} ${toIn(st.mb)} ${toIn(st.ml)}; }
-        html,body { background:#fff!important; margin:0!important; padding:0!important; overflow:visible!important; }
+        @page { size:${szMap[st.paper]||'letter portrait'}; margin:0; }
+        html,body { margin:0!important; padding:0!important; background:#fff!important; overflow:visible!important; }
         body > *:not(#print-frame) { display:none!important; }
-        #print-frame { display:block!important; width:100%!important; visibility:visible!important; position:static!important; left:auto!important; }
-        #print-frame .rresume,
-        #print-frame [class*="rresume"],
-        #print-frame > div { width:100%!important; }
-        /* Let rresume inline min-height:${paper.h}px work so flex row fills page */
-        #print-frame .r-side,#print-frame [class*="r-side"] {
-          -webkit-print-color-adjust:exact!important;
-          print-color-adjust:exact!important;
-          align-self:stretch!important;
-          min-height:100%!important;
+        #print-frame { display:block!important; position:static!important; left:auto!important; visibility:visible!important; }
+        .print-page {
+          width:${paper.w}px!important; height:${paper.h}px!important;
+          overflow:hidden!important; position:relative!important;
+          page-break-after:always; -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important;
         }
-        #print-frame .rsec,#print-frame .r-co-block,#print-frame .r-edu,#print-frame .r-role {
-          break-inside:avoid; page-break-inside:avoid;
-        }
+        .print-page:last-child { page-break-after:auto; }
+        .print-sidebar-strip { -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important; }
+        #print-frame .r-side { -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important; }
+        #print-frame .r-namebar { -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important; }
         #print-frame .drag-handle { display:none!important; }
         #print-frame .ie-text:hover,#print-frame .ie-text:focus,
-        #print-frame .ie-hdr:hover,#print-frame .ie-hdr:focus {
-          outline:none!important; background:none!important;
-        }
+        #print-frame .ie-hdr:hover,#print-frame .ie-hdr:focus { outline:none!important; background:none!important; }
       }
     `;
     document.head.appendChild(ps);
