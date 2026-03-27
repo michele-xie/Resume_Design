@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Michele.AI Resume Builder</title>
+<title>Michele Resume Design</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Syne:wght@400;600;700&family=IBM+Plex+Serif:wght@400;500;600&family=Josefin+Sans:wght@300;400;600&family=Libre+Baskerville:wght@400;700&family=Lato:wght@300;400;700&family=Raleway:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Source+Serif+4:wght@300;400;600;700&family=Merriweather:wght@300;400;700&family=EB+Garamond:wght@400;500;600&family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&family=Spectral:wght@300;400;500;600&family=Jost:wght@300;400;500;600&family=Lexend:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600;700&family=Bitter:wght@300;400;600;700&family=Roboto+Slab:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 <style>
 /* ══════════════════════════════════════════════
@@ -43,7 +43,6 @@
 #panel.theme-light .sec-body{border-top-color:var(--bord)}
 #panel.theme-light .bedit{background:var(--bg);border-color:var(--bord);color:var(--txt)}
 #panel.theme-light .bedit::after{background:linear-gradient(transparent,var(--bg))}
-#panel.theme-light .ai-drawer{background:#edf5f1;border-color:rgba(109,184,154,.4)}
 .theme-light .modal-box{background:#f5f4f1;border-color:#c9c4bb;color:#1a1714}
 .theme-light .modal-head{color:#1e5fa0;border-bottom-color:#ddd9d2}
 .theme-light .modal-close{color:#8a857c}
@@ -278,31 +277,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .loc-btn.as{background:rgba(201,169,110,.15);border-color:var(--acc);color:var(--acc)}
 
 /* AI button & drawer */
-.ai-btn{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:rgba(109,184,154,.08);border:1px solid var(--acc2);border-radius:5px;color:var(--acc2);font-family:inherit;font-size:10px;font-weight:700;cursor:pointer;transition:.2s;margin-top:5px}
-.ai-btn:hover{background:rgba(109,184,154,.18)}
-.ai-drawer{background:#0a1a14;border:1px solid rgba(109,184,154,.3);border-radius:6px;margin-top:6px;overflow:hidden}
-.ai-dh{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-bottom:1px solid rgba(109,184,154,.15)}
-.ai-dh span{font-size:9.5px;font-weight:700;color:var(--acc2);letter-spacing:.08em;text-transform:uppercase}
-.ai-dc{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;padding:2px 4px}
-.ai-dc:hover{color:var(--txt)}
-.ai-ctx{padding:7px 10px;border-bottom:1px solid rgba(109,184,154,.1)}
-.ai-ctx label{display:block;font-size:9px;color:var(--acc2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
-.ai-ctx textarea{width:100%;background:rgba(0,0,0,.3);border:1px solid rgba(109,184,154,.2);border-radius:4px;color:var(--txt);font-family:inherit;font-size:10.5px;padding:5px 8px;outline:none;resize:none;min-height:36px;line-height:1.4}
-.ai-ctx textarea:focus{border-color:var(--acc2)}
-.ai-results{padding:7px 9px;display:flex;flex-direction:column;gap:5px;max-height:280px;overflow-y:auto}
-.ai-loading{padding:12px;text-align:center;font-size:11px;color:var(--muted2);display:flex;align-items:center;justify-content:center;gap:8px}
-.ai-loading .dots span{animation:dot 1.2s infinite;display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acc2);margin:0 2px;vertical-align:middle}
-.ai-loading .dots span:nth-child(2){animation-delay:.2s}
-.ai-loading .dots span:nth-child(3){animation-delay:.4s}
 @keyframes dot{0%,80%,100%{transform:scale(0);opacity:.3}40%{transform:scale(1);opacity:1}}
-.ai-sug{background:var(--surf2);border:1px solid var(--bord);border-radius:5px;padding:7px 42px 7px 9px;font-size:11px;line-height:1.5;color:var(--txt);cursor:pointer;transition:.15s;position:relative}
-.ai-sug:hover{border-color:var(--acc2)}
-.ai-ins{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:var(--acc2);color:#111;border:none;border-radius:3px;font-size:9px;font-weight:700;padding:3px 7px;cursor:pointer;opacity:0;transition:.15s;font-family:inherit}
-.ai-sug:hover .ai-ins{opacity:1}
-.ai-err{padding:10px;font-size:11px;color:var(--danger);text-align:center}
-.ai-foot{display:flex;justify-content:flex-end;padding:5px 9px 7px;border-top:1px solid rgba(109,184,154,.1)}
-.ai-foot button{background:none;border:1px solid rgba(109,184,154,.3);color:var(--acc2);border-radius:4px;font-family:inherit;font-size:10px;font-weight:600;padding:4px 9px;cursor:pointer;transition:.15s}
-.ai-foot button:hover{background:rgba(109,184,154,.1)}
 
 /* ══════════════════════════════════════════════
    PANEL FOOTER
@@ -646,7 +621,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 <div id="panel">
   <div id="ph">
     <div style="display:flex;align-items:center;justify-content:space-between">
-      <h1>Michele.AI Resume Builder</h1>
+      <h1>Michele Resume Design</h1>
       <div style="display:flex;align-items:center;gap:5px;flex-shrink:0">
         <button id="undo-btn" class="undo-btn" onclick="historyUndo()" title="Undo (Ctrl+Z)" disabled>
           <svg width="13" height="11" viewBox="0 0 13 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -669,7 +644,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           style="background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.35);border-radius:6px;color:var(--acc);cursor:pointer;font-size:11px;padding:3px 9px;line-height:1.4;transition:.18s;font-family:inherit;font-weight:700;letter-spacing:.02em">FAQ</button>
       </div>
     </div>
-    <p>AI-Powered · Edit · Reorder · Export</p>
+    <p>Design · Edit · Reorder · Export PDF</p>
   </div>
   <div id="tabs">
     <div class="tab active" data-tab="header">Personal Info</div>
@@ -1137,7 +1112,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <div class="ds-group-hdr collapsible">↔ Name Bar Alignment <span class="ds-badge">Modern · Top Bar</span></div>
         <div class="ds-group-body">
           <div class="aln-group">
-            <button class="aln-btn sel-aln" data-aln="left"  onclick="setAlign('left')">← Left</button>
+            <button class="aln-btn" data-aln="left"  onclick="setAlign('left')">← Left</button>
             <button class="aln-btn"         data-aln="center" onclick="setAlign('center')">↔ Center</button>
             <button class="aln-btn"         data-aln="right"  onclick="setAlign('right')">→ Right</button>
           </div>
@@ -1149,7 +1124,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <div class="ds-group-hdr collapsible">↔ Header Alignment</div>
         <div class="ds-group-body">
           <div class="aln-group">
-            <button class="aln-btn sel-aln" data-aln="left"  onclick="setAlign('left')">← Left</button>
+            <button class="aln-btn" data-aln="left"  onclick="setAlign('left')">← Left</button>
             <button class="aln-btn"         data-aln="center" onclick="setAlign('center')">↔ Center</button>
             <button class="aln-btn"         data-aln="right"  onclick="setAlign('right')">→ Right</button>
           </div>
@@ -1331,15 +1306,12 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <div class="faq-q">Can I reorder sections on the live preview?</div>
         <div class="faq-a">Yes. Hover over any section on the live preview to reveal the <strong>⠿ drag handle</strong> on the left. Click and drag it to reorder sections in place — the panel updates automatically and the scroll position is preserved.</div>
 
-        <div class="faq-q">How do AI bullet suggestions work?</div>
-        <div class="faq-a">Open any Experience section → expand a job → click <strong>✦ AI Suggestions</strong>. Enter optional context and the AI generates 5 ATS-optimised bullets. Click any to insert it.</div>
       </div>
 
       <div class="faq-section">
         <div class="faq-section-title">Design &amp; Typography</div>
         <div class="faq-q">How do I change name bar alignment?</div>
         <div class="faq-a"><strong>Spacing &amp; Align → Name Bar Alignment</strong> — available for <strong>Modern</strong> and <strong>Top Bar</strong> templates. Choices are Left, Center, and Right. Top Bar defaults to Center; Modern defaults to Left.</div>
-        <div class="faq-q">Where do I change fonts?</div>
         <div class="faq-a">Design tab → Typography. Three groups: <strong>Heading &amp; Name</strong>, <strong>Contact</strong>, and <strong>Body Content</strong>. A live "Aa" specimen below each dropdown previews the typeface.</div>
         <div class="faq-q">What does Body Text font size control?</div>
         <div class="faq-a">Body Text applies to all content not covered by the specific controls above it — bullets, skills, certifications, education, summary, and custom text. Section Header, Company &amp; Location, and Job Title &amp; Date each have their own separate size controls.</div>
@@ -1383,7 +1355,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       </div>
 
       <div style="text-align:center;font-size:9.5px;color:var(--muted);padding-top:10px;border-top:1px solid var(--bord);margin-top:4px">
-        Michele.AI Resume Builder · <em>Features update with each patch</em>
+        Michele Resume Design · <em>Features update with each patch</em>
       </div>
 
     </div>
@@ -1911,16 +1883,7 @@ const Panel = {
         <button class="bdel" data-action="delbullet" data-id="${id}" data-ji="${ji}" data-bi="${bi}">✕</button>
       </li>`).join('')}
     </ul>
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-      <button class="add-b" data-action="addbullet" data-id="${id}" data-ji="${ji}">＋ Add bullet</button>
-      <button class="ai-btn" data-action="toggleai" data-id="${id}" data-ji="${ji}">✦ AI Suggest</button>
-    </div>
-  </div>
-  <div class="ai-drawer" id="aid-${id}-${ji}" style="display:none">
-    <div class="ai-dh"><span>✦ AI Suggestions</span><button class="ai-dc" data-action="toggleai" data-id="${id}" data-ji="${ji}">✕</button></div>
-    <div class="ai-ctx"><label>Extra context (optional)</label><textarea id="aictx-${id}-${ji}" rows="2" placeholder="Target role, tools, achievements…"></textarea></div>
-    <div class="ai-results" id="air-${id}-${ji}"></div>
-    <div class="ai-foot"><button data-action="runai" data-id="${id}" data-ji="${ji}">↻ Generate</button></div>
+    <button class="add-b" data-action="addbullet" data-id="${id}" data-ji="${ji}">＋ Add bullet</button>
   </div>
 </div>`;
       });
@@ -2653,21 +2616,6 @@ const Render = {
 };
 
 // Short alias for dynamic innerHTML in Render
-function insertAI(sid, ji, idx) {
-  const r = $(`air-${sid}-${ji}`);
-  const suggestions = JSON.parse(r?.dataset.s || '[]');
-  const text = suggestions[idx]; if (!text) return;
-  const sec = getSec(sid);
-  const arr = sec.data.jobs[ji].bullets;
-  const ei = arr.lastIndexOf('');
-  if (ei >= 0) arr[ei] = text; else arr.push(text);
-  const savedHTML = r.innerHTML, savedS = r.dataset.s;
-  Panel.rebuildKeepOpen();
-  setTimeout(() => {
-    const nd = $(`aid-${sid}-${ji}`);
-    if (nd) { nd.style.display = 'block'; const nr = $(`air-${sid}-${ji}`); if (nr) { nr.innerHTML = savedHTML; nr.dataset.s = savedS; } }
-  }, 30);
-}
 
 
 // ═══════════════════════════════════════════════════════════════
@@ -3166,45 +3114,8 @@ const UI = {
   },
 
   // ── AI bullets ──────────────────────────────────────────
-  toggleAI(sid, ji) {
-    const d = $(`aid-${sid}-${ji}`);
-    if (!d) return;
-    const isOpen = d.style.display === 'block';
-    d.style.display = isOpen ? 'none' : 'block';
-    if (!isOpen) {
-      const r = $(`air-${sid}-${ji}`);
-      if (r && !r.innerHTML) this.runAI(sid, ji);
-    }
-  },
-
-  async runAI(sid, ji) {
-    const sec = getSec(sid);
-    const job = sec.data.jobs[ji];
-    const ctx = ($(`aictx-${sid}-${ji}`)?.value || '').trim();
-    const existing = job.bullets.filter(b => b.trim()).join('\n');
-    const r = $(`air-${sid}-${ji}`);
-    r.innerHTML = `<div class="ai-loading">Generating<div class="dots"><span></span><span></span><span></span></div></div>`;
-
-    const prompt = `You are an expert resume writer specializing in ATS-optimized resumes for technical program management and product roles.\n\nRole: ${job.title}\nCompany: ${job.company}\nDates: ${job.dates}${job.location?'\nLocation: '+job.location:''}${existing?'\nExisting bullets:\n'+existing:''}${ctx?'\nContext: '+ctx:''}\n\nGenerate exactly 5 resume bullet points. Each must:\n- Begin with a powerful past-tense action verb\n- Be ATS-friendly with TPM/PM/BA/Agile keywords\n- Include a quantified metric (%, $, time, scale) where possible\n- Be concise (under 25 words), one sentence\n- Focus on impact and business outcome\n- Never start with "Responsible for" or "Helped"\n- Not duplicate the existing bullets above\n\nRespond ONLY with a valid JSON array of 5 strings. No markdown, no explanation.`;
-
-    try {
-      const res  = await fetch('https://api.anthropic.com/v1/messages', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})
-      });
-      const data = await res.json();
-      const raw  = (data.content||[]).map(c=>c.text||'').join('').trim();
-      const suggestions = JSON.parse(raw.replace(/```json|```/g,'').trim());
-      if (!Array.isArray(suggestions)) throw new Error('bad');
-      r.dataset.s = JSON.stringify(suggestions);
-      r.innerHTML = suggestions.map((b,i) =>
-        `<div class="ai-sug">${esc(b)}<button class="ai-ins" data-action="insertai" data-sid="${sid}" data-ji="${ji}" data-idx="${i}">＋ Add</button></div>`
-      ).join('');
-    } catch(e) {
-      r.innerHTML = `<div class="ai-err">⚠ Generation failed. Try again.</div>`;
-    }
-  }
 };
+
 
 // Short aliases
 function openSaveModal()    { UI.openModal('save-modal'); }
@@ -3213,7 +3124,6 @@ function openFaqModal()     { UI.openModal('faq-modal'); }
 function closeModal()       { UI.closeModal(); }
 function togglePanelTheme() { UI.toggleTheme(); }
 function printResume()      { UI.print(); }
-function toggleAi(sid, ji)  { UI.toggleAI(sid, ji); }
 function showToast(msg, d)  { UI.showToast(msg, d === undefined ? 1800 : d); }
 function setZoom(dir)       { UI.setZoom(dir); }
 function historyUndo()      { History.undo(); }
@@ -3263,9 +3173,6 @@ document.addEventListener('click', e => {
     case 'addlistitem': Sections.addListItem(id); break;
     case 'dellistitem': Sections.delListItem(id, +ii); break;
     case 'setcols':     Sections.setCols(id, +n); break;
-    case 'toggleai':    UI.toggleAI(id, +ji); break;
-    case 'runai':       UI.runAI(id, +ji); break;
-    case 'insertai':    insertAI(sid, +ji, +idx); break;
     case 'doload':      Storage.load(+idx); UI.closeModal(); break;
     case 'dodel':       Storage.del(+idx); break;
     case 'bulletdrag':  break;
