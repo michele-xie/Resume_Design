@@ -529,8 +529,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .skill-tag[draggable=true]{cursor:grab}
 .rsec-title{font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding-bottom:4px;margin-bottom:9px}
 .rsec-title.sl-line{border-bottom:1.5px solid}
-.rsec-title.sl-thick{border-bottom:3.5px solid}
-.rsec-title.sl-bg{padding:3px 8px;margin-left:-8px}
 .rsec-title.sl-none{}
 
 /* job — grouped by company */
@@ -741,7 +739,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
             <select id="divider">
               <option value="sl-line">Thin Line</option>
               <option value="sl-thick">Thick Line</option>
-              <option value="sl-bg">Filled Background</option>
               <option value="sl-none">None</option>
             </select>
           </div>
@@ -784,7 +781,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           </div>
           <div class="ef" id="bar-sep-row"><label>Contact Separator</label>
             <select id="bar-sep-sel" onchange="st.barContactSep=this.value;renderResume()">
-              <option value="pipe">Pipe  |</option>
+              <option value="pipe" selected>Pipe  |</option>
               <option value="bullet">Bullet  •</option>
               <option value="dot">Middle Dot  ·</option>
               <option value="diamond">Diamond  ◆</option>
@@ -2191,7 +2188,9 @@ const Render = {
     const titleVal   = ($('h-title')||{}).value || '';
     const cItems     = this._contactItemsArray((contactSec||{}).data || {});
     const sep        = this._getSepChar();
-    const contactLine = cItems.join(` <span style="opacity:.45">${sep}</span> `);
+    const contactLine = st.barContactSep === 'newline'
+      ? cItems.join('<br>')
+      : cItems.join(` <span style="opacity:.45">${sep}</span> `);
 
     return `<div style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">
       <div style="padding:${st.mt}px ${st.mr}px ${Math.round(st.mt*0.3)}px ${st.ml}px;text-align:center">
@@ -2237,6 +2236,7 @@ const Render = {
   _inlineContactHTML(sec) {
     if (!sec) return '';
     const items = this._contactItemsArray(sec.data);
+    if (st.barContactSep === 'newline') return items.join('<br>');
     const sep = this._getSepChar();
     return items.join(` <span style="opacity:.5">${sep}</span> `);
   },
@@ -2252,7 +2252,7 @@ const Render = {
   },
 
   _getSepChar() {
-    const map = { pipe:'|', dot:'·', dash:'–', slash:'/' };
+    const map = { pipe:'|', bullet:'•', dot:'·', diamond:'◆', dash:'–', slash:'/' };
     return map[st.barContactSep] || '|';
   },
 
@@ -2271,10 +2271,9 @@ const Render = {
     // Others: respect st.div setting
     let divider;
     if (st.layout === 'standard') {
-      divider = ''; // underline is part of the title style itself
+      divider = this._dividerHTML(isMain);
     } else if (st.layout === 'top') {
-      const color = isMain ? st.acc : 'currentColor';
-      divider = `<div style="border-bottom:1.5px solid ${color};margin:3px 0 0"></div>`;
+      divider = this._dividerHTML(isMain);
     } else {
       divider = this._dividerHTML(isMain);
     }
@@ -2290,8 +2289,8 @@ const Render = {
 
   _secTitleStyle(isMain) {
     if (st.layout === 'standard') {
-      // Standard (ATS): ALL CAPS bold header with solid full-width underline — respects acc color
-      return `font-size:${st.ss}px;color:${st.acc};border-bottom:1.5px solid ${st.acc};text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding-bottom:2px;`;
+      // Standard (ATS): ALL CAPS bold header — divider rendered separately via _dividerHTML
+      return `font-size:${st.ss}px;color:${st.acc};text-transform:uppercase;letter-spacing:.08em;font-weight:700;`;
     }
     const bold  = st.secHdrBold  ? 'font-weight:700'    : 'font-weight:600';
     const ital  = st.secHdrItalic ? 'font-style:italic' : '';
@@ -2304,12 +2303,10 @@ const Render = {
   _dividerHTML(isMain) {
     const color = isMain ? st.acc : 'currentColor';
     switch (st.div) {
-      case 'sl-line':   return `<div style="border-bottom:1.5px solid ${color};margin:3px 0 0"></div>`;
-      case 'dbl-line':  return `<div style="border-bottom:3px double ${color};margin:3px 0 0"></div>`;
-      case 'thick':     return `<div style="border-bottom:3px solid ${color};margin:3px 0 0"></div>`;
-      case 'dots':      return `<div style="border-bottom:1.5px dotted ${color};margin:3px 0 0"></div>`;
-      case 'none':      return '';
-      default:          return `<div style="border-bottom:1.5px solid ${color};margin:3px 0 0"></div>`;
+      case 'sl-line':  return `<div style="border-bottom:1.5px solid ${color};margin:3px 0 0"></div>`;
+      case 'sl-thick': return `<div style="border-bottom:3px solid ${color};margin:3px 0 0"></div>`;
+      case 'sl-none':  return '';
+      default:         return `<div style="border-bottom:1.5px solid ${color};margin:3px 0 0"></div>`;
     }
   },
 
