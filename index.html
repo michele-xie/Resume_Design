@@ -48,6 +48,14 @@
 .theme-light .modal-close{color:#8a857c}
 .theme-light .modal-close:hover{color:#1a1714}
 .theme-light .modal-body{background:#f5f4f1}
+.theme-light .save-item{background:#ffffff;border-color:#ddd9d2}
+.theme-light .save-item-name{color:#1a1714}
+.theme-light .save-item-date{color:#8a857c}
+.theme-light .save-load-btn{background:rgba(109,184,154,.12);border-color:rgba(109,184,154,.6);color:#1f6b50}
+.theme-light .save-load-btn:hover{background:rgba(109,184,154,.25)}
+.theme-light .save-del-btn{background:rgba(212,107,107,.08);border-color:rgba(212,107,107,.5);color:#b03030}
+.theme-light .save-del-btn:hover{background:rgba(212,107,107,.18)}
+.theme-light .modal-body input[type=text]{background:#fff;border-color:#ddd9d2;color:#1a1714}
 #panel.theme-light .save-item{background:var(--bg);border-color:var(--bord)}
 #panel.theme-light .tag-chip{background:var(--surf2);border-color:var(--bord)}
 #panel.theme-light .snum{background:var(--bg);color:#8a6a2a;border-color:var(--bord2)}
@@ -74,7 +82,10 @@
 #panel.theme-light .side-pos-btn{border-color:var(--bord);color:#3e3a36}
 #panel.theme-light input[type=range]{background:var(--bord2)}
 #panel.theme-light #theme-label{color:#6e6860}#panel.theme-light #theme-toggle{background:rgba(0,0,0,.05);border-color:var(--bord2);color:#4e4944}
-#panel.theme-light #theme-toggle:hover{color:var(--txt);border-color:var(--bord)}
+#faq-btn{background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.35);border-radius:6px;color:var(--acc);cursor:pointer;font-size:11px;padding:3px 9px;line-height:1.4;transition:.18s;font-family:inherit;font-weight:700;letter-spacing:.02em}
+#faq-btn:hover{background:rgba(201,169,110,.2)}
+#panel.theme-light #faq-btn{background:rgba(30,95,160,.08);border-color:rgba(30,95,160,.3);color:#1e5fa0}
+#panel.theme-light #faq-btn:hover{background:rgba(30,95,160,.15)}
 /* Tab gold highlight preserved — only inactive tabs change */
 #panel.theme-light .tab:not(.active){color:#3e3a36;background:var(--surf2)}
 #panel.theme-light .tab.active{color:#1e5fa0;border-bottom-color:#1e5fa0}
@@ -288,6 +299,16 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .pf-print{background:linear-gradient(135deg,var(--acc),#b8924a);color:#111;padding:11px 10px;font-size:11.5px;letter-spacing:.09em;box-shadow:0 2px 12px rgba(201,169,110,.25)}
 .pf-print:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 4px 18px rgba(201,169,110,.35)}
 .pf-print small{font-size:8.5px;opacity:.7;font-weight:400;letter-spacing:.03em;margin-left:2px}
+.pf-print{background:linear-gradient(135deg,var(--acc),#b8924a);color:#111;padding:11px 10px;font-size:11.5px;letter-spacing:.09em;box-shadow:0 2px 12px rgba(201,169,110,.25)}
+.pf-print:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 4px 18px rgba(201,169,110,.35)}
+.pf-print small{font-size:8.5px;opacity:.7;font-weight:400;letter-spacing:.03em;margin-left:2px}
+.pf-print{background:linear-gradient(135deg,var(--acc),#b8924a);color:#111;padding:11px 10px;font-size:11.5px;letter-spacing:.09em;box-shadow:0 2px 12px rgba(201,169,110,.25)}
+.pf-print:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 4px 18px rgba(201,169,110,.35)}
+.pf-print small{font-size:8.5px;opacity:.7;font-weight:400;letter-spacing:.03em;margin-left:2px}
+.pf-links{background:linear-gradient(135deg,#3a8f72,#2d7a5f);color:#fff;padding:9px 10px;font-size:11px;letter-spacing:.07em;box-shadow:0 2px 10px rgba(58,143,114,.25)}
+.pf-links:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 4px 16px rgba(58,143,114,.35)}
+.pf-links small{font-size:8.5px;opacity:.75;font-weight:400;letter-spacing:.03em;margin-left:2px}
+#panel.theme-light .pf-links{background:linear-gradient(135deg,#2d7a5f,#256650);color:#fff}
 .pf-save{background:rgba(109,184,154,.12);border:1px solid var(--acc2);color:var(--acc2);flex:1}
 .pf-save:hover{background:rgba(109,184,154,.22)}
 .pf-load{background:rgba(107,159,212,.1);border:1px solid var(--info);color:var(--info);flex:1}
@@ -639,8 +660,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <button id="theme-toggle" onclick="togglePanelTheme()" title="Toggle light / dark panel"
           style="background:rgba(255,255,255,.06);border:1px solid var(--bord2);border-radius:6px;color:var(--muted);cursor:pointer;font-size:11px;padding:3px 8px;line-height:1.4;transition:.18s;font-family:inherit;font-weight:600;letter-spacing:.02em">☀︎ Light</button>
         <span style="width:1px;height:14px;background:var(--bord2);display:inline-block;margin:0 2px"></span>
-        <button onclick="openFaqModal()" title="Help &amp; FAQ"
-          style="background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.35);border-radius:6px;color:var(--acc);cursor:pointer;font-size:11px;padding:3px 9px;line-height:1.4;transition:.18s;font-family:inherit;font-weight:700;letter-spacing:.02em">FAQ</button>
+        <button id="faq-btn" onclick="openFaqModal()" title="Help &amp; FAQ">FAQ</button>
       </div>
     </div>
     <p>Design · Edit · Reorder · Export PDF</p>
@@ -903,7 +923,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
                 <option value="'Libre Baskerville',serif">Libre Baskerville</option>
                 </optgroup>
               </select>
-              <div class="font-specimen" id="spec-fc" style="font-family:Arial,sans-serif">Aa — Contact</div>
+              <div class="font-specimen" id="spec-fc-contact" style="font-family:Arial,sans-serif">Aa — Contact</div>
             </div>
             <div class="ef"><label>Font Size</label>
               <div class="fs-row"><input type="range" id="r-cfs" min="8" max="14" value="11" step="1"><input class="snum" id="v-cfs" type="number" min="8" max="14" value="11"></div>
@@ -1206,7 +1226,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       <button class="pf-btn pf-save" onclick="openSaveModal()">💾 Save</button>
       <button class="pf-btn pf-load" onclick="openLoadModal()">📂 Load</button>
     </div>
-    <button class="pf-btn pf-print" onclick="printResume()" title="Export PDF (Ctrl+P / ⌘P)">⬇ Export PDF <small>(via browser print · Ctrl+P)</small></button>
+    <button class="pf-btn pf-print" onclick="printResume()" title="Export PDF — precise layout, exact margins">⬇ Export PDF</button>
     <div style="text-align:center;font-size:9px;color:var(--muted);letter-spacing:.04em;margin-top:4px">© 2026 Michele Xie. All rights reserved.</div>
   </div>
 </div>
@@ -1593,7 +1613,13 @@ const Sections = {
 
   updListItem(id, ii, v)  { getSec(id).data.items[ii] = v; Render.resume(); },
   delListItem(id, ii)     { History.push(); getSec(id).data.items.splice(ii, 1); Panel.rebuildKeepOpen(); },
-  addListItem(id)         { History.push(); getSec(id).data.items.push('New item'); Panel.rebuildKeepOpen(); },
+  addListItem(id)         {
+    History.push();
+    const el = $(`li-new-${id}`);
+    const val = el ? el.value.trim() : '';
+    getSec(id).data.items.push(val || 'New item');
+    Panel.rebuildKeepOpen();
+  },
 
   setCols(id, n) {
     History.push();
@@ -1934,7 +1960,7 @@ const Panel = {
     <div class="ef"><label>Section Title</label><input type="text" value="${esc(sec.title)}" oninput="renameS('${id}',this.value)"></div>
     <div class="tag-wrap" id="tw-${id}">${chips}</div>
     <div class="tag-add">
-      <input type="text" id="ti-${id}" placeholder="New skill…" onkeydown="if(event.key==='Enter'){addTag('${id}');event.preventDefault()}">
+      <input type="text" id="tag-new-${id}" placeholder="New skill…" onkeydown="if(event.key==='Enter'){addTag('${id}');event.preventDefault()}">
       <button class="btn btn-ghost btn-sm" data-action="addtag" data-id="${id}">Add</button>
     </div>`;
   },
@@ -1955,7 +1981,11 @@ const Panel = {
       <button class="bdel" data-action="dellistitem" data-id="${id}" data-ii="${ii}">✕</button>
     </li>`;
     });
-    h += `</ul><button class="add-b" data-action="addlistitem" data-id="${id}">＋ Add item</button>`;
+    h += `</ul>
+    <div class="tag-add">
+      <input type="text" id="li-new-${id}" placeholder="New item…" onkeydown="if(event.key==='Enter'){addListItem('${id}');event.preventDefault()}">
+      <button class="add-b" data-action="addlistitem" data-id="${id}" style="white-space:nowrap">＋ Add item</button>
+    </div>`;
     return h;
   },
 
@@ -2027,6 +2057,41 @@ const Panel = {
 
 
 // ═══════════════════════════════════════════════════════════════
+// UTILITY · computeSafeBreaks
+// Given a container in the DOM (position:fixed so getBoundingClientRect works),
+// returns an array of cumulative safe break positions in container-local coords.
+// Each entry is the end-y of that page's content window. Elements that straddle
+// a nominal break are moved to the next page; if an element is taller than a
+// full page it falls back to the nominal break (unavoidable).
+// ═══════════════════════════════════════════════════════════════
+function computeSafeBreaks(container, firstPageH, laterPageH, totalH) {
+  const ct = container.getBoundingClientRect().top;
+  const rects = Array.from(container.querySelectorAll(
+    '.rsec,.r-co-block,.r-role,.r-edu,li'
+  )).map(el => {
+    const r = el.getBoundingClientRect();
+    return { top: r.top - ct, bot: r.bottom - ct };
+  }).filter(r => r.bot > r.top + 2);
+
+  const safeBreaks = [];
+  let pos = 0, ph = firstPageH;
+  while (pos < totalH) {
+    const nom = pos + ph;
+    if (nom >= totalH) { safeBreaks.push(totalH); break; }
+    let safe = nom;
+    for (const r of rects) {
+      if (r.top < nom && r.bot > nom && r.top > pos)
+        safe = Math.min(safe, r.top);
+    }
+    if (safe <= pos) safe = nom; // element taller than page — unavoidable
+    safeBreaks.push(safe);
+    pos = safe;
+    ph = laterPageH;
+  }
+  return safeBreaks.length ? safeBreaks : [totalH];
+}
+
+// ═══════════════════════════════════════════════════════════════
 // MODULE 5 · RENDER  (resume preview)
 // ═══════════════════════════════════════════════════════════════
 const Render = {
@@ -2057,15 +2122,19 @@ const Render = {
     const mt = st.mt || 0, mb = st.mb || 0, ml = st.ml || 0, mr = st.mr || 0;
     const usableH = Math.max(1, paper.h - mt - mb);
 
+    // position:fixed so getBoundingClientRect returns real layout coords for safe break detection
     const tmp = document.createElement('div');
-    tmp.style.cssText = `position:absolute;visibility:hidden;width:${paper.w}px`;
+    tmp.style.cssText = `position:fixed;top:0;left:-${paper.w + 20}px;width:${paper.w}px;visibility:hidden`;
     tmp.innerHTML = html;
     document.body.appendChild(tmp);
-    const totalH = tmp.scrollHeight;
+    const totalH   = tmp.scrollHeight;
+    const contentH = Math.max(usableH, totalH - mt - mb);
+
+    // Compute safe break positions — avoids cutting words/lines horizontally
+    const safeBreaks = computeSafeBreaks(tmp, usableH, usableH, contentH);
     document.body.removeChild(tmp);
 
-    const contentH = Math.max(usableH, totalH - mt - mb);
-    const pages    = Math.max(1, Math.ceil(contentH / usableH));
+    const pages = safeBreaks.length;
 
     const hasSidebar = st.layout === 'classic' || st.layout === 'sidebar';
     const sideOnLeft = (st.sidePos || 'left') === 'left';
@@ -2074,6 +2143,10 @@ const Render = {
     const stripWidth = Math.round(paper.w * sw / 100);
 
     for (let p = 0; p < pages; p++) {
+      const startOffset = p === 0 ? 0 : safeBreaks[p - 1];
+      const safeEnd     = safeBreaks[p];
+      const visibleH    = safeEnd - startOffset;
+
       const page = document.createElement('div');
       page.className = 'rpage';
       page.style.cssText = `width:${paper.w}px;height:${paper.h}px;overflow:hidden;position:relative;background:#fff`;
@@ -2085,7 +2158,8 @@ const Render = {
       }
 
       const inner = document.createElement('div');
-      inner.style.cssText = `position:absolute;top:${-p * usableH}px;left:0;width:100%;z-index:1`;
+      // max-height clips the inner div at the safe break so content below doesn't bleed into this page
+      inner.style.cssText = `position:absolute;top:${-startOffset}px;left:0;width:100%;max-height:${safeEnd}px;overflow:hidden;z-index:1`;
       inner.innerHTML = html;
       page.appendChild(inner);
 
@@ -2105,7 +2179,7 @@ const Render = {
       if (pages > 1 && p < pages - 1) {
         const overlay = document.createElement('div');
         overlay.className = 'pb-overlay';
-        overlay.style.top = (paper.h - mb - 1) + 'px';
+        overlay.style.top = (visibleH - 1) + 'px';
         page.appendChild(overlay);
       }
       wrap.appendChild(page);
@@ -2150,7 +2224,7 @@ const Render = {
     const sideOnLeft = (st.sidePos || 'left') === 'left';
 
     const sideHtml = `<div class="r-side" style="width:${sw}%;background:${st.sbg};color:${st.stxt};padding:${st.mt}px ${st.ml*0.6|0}px ${st.mb}px ${sideOnLeft?st.ml:st.ml*0.6|0}px">
-      <div class="r-name-sb ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.stxt};margin-bottom:12px;font-weight:700">${esc(($('h-name')||{}).value||'Your Name')}</div>
+      <div class="r-name-sb ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.stxt};margin-bottom:12px;font-weight:${st.nameBarBold?'700':'600'};${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(($('h-name')||{}).value||'Your Name')}</div>
       ${this._buildContactBlock(contactSec)}
       ${sideSecs.map(s => this._renderSectionHTML(s)).join('')}
     </div>`;
@@ -2169,8 +2243,8 @@ const Render = {
 
     const topAlign = st.nameAlign === 'center' ? 'center' : st.nameAlign === 'right' ? 'right' : 'left';
     const header = `<div style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:${st.mt*0.8|0}px ${st.ml}px;color:${st.nameBarTxt};text-align:${topAlign};display:flex;flex-direction:column;justify-content:center">
-      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:700">${esc(nameVal)}</div>
-      <div style="font-size:${st.contactFontSize}px;margin-top:6px">${this._inlineContactHTML(contactSec)}</div>
+      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:${st.nameBarBold?'700':'600'};${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(nameVal)}</div>
+      <div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-top:6px">${this._inlineContactHTML(contactSec)}</div>
     </div>`;
 
     return `<div class="rresume" style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">
@@ -2194,9 +2268,9 @@ const Render = {
 
     return `<div style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">
       <div style="padding:${st.mt}px ${st.mr}px ${Math.round(st.mt*0.3)}px ${st.ml}px;text-align:center">
-        <div class="ie-hdr r-name" data-field="hname" style="font-size:${st.nameBarFontSize}px;font-family:${st.fh};font-weight:700;color:${st.txt};letter-spacing:.01em">${esc(nameVal)}</div>
+        <div class="ie-hdr r-name" data-field="hname" style="font-size:${st.nameBarFontSize}px;font-family:${st.fh};font-weight:${st.nameBarBold?'700':'600'};${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}color:${st.txt};letter-spacing:.01em">${esc(nameVal)}</div>
         ${titleVal ? `<div class="ie-hdr" data-field="htitle" style="font-size:${st.taglineFontSize}px;color:${st.txt};margin-top:2px">${esc(titleVal)}</div>` : ''}
-        ${contactLine ? `<div style="font-size:${st.contactFontSize}px;color:${st.txt};margin-top:4px;line-height:1.6">${contactLine}</div>` : ''}
+        ${contactLine ? `<div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;color:${st.txt};margin-top:4px;line-height:1.6;${st.contactBold?'font-weight:700;':''}${st.contactItalic?'font-style:italic;':''}${st.contactUnderline?'text-decoration:underline;':''}">${contactLine}</div>` : ''}
       </div>
       <div style="padding:${Math.round(st.msg*0.5)}px ${st.mr}px ${st.mb}px ${st.ml}px;font-size:${st.bs}px">
         ${mainSecs.map(s => this._renderSectionHTML(s)).join('')}
@@ -2213,7 +2287,7 @@ const Render = {
     const uline    = st.nameBarUnderline ? 'text-decoration:underline' : '';
 
     const contactLine = st.barContactInBar
-      ? `<div style="font-size:${st.contactFontSize}px;color:${st.nameBarSub};margin-top:6px;text-align:${align}">${this._inlineContactHTML(contactSec)}</div>`
+      ? `<div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;color:${st.nameBarSub};margin-top:6px;text-align:${align}">${this._inlineContactHTML(contactSec)}</div>`
       : '';
 
     return `<div class="r-namebar" style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:16px ${st.ml}px;display:flex;flex-direction:column;justify-content:center;text-align:${align}">
@@ -2226,9 +2300,12 @@ const Render = {
     if (!sec) return '';
     const d = sec.data;
     const items = this._contactItemsArray(d);
-    // colorOverride allows caller to pass explicit color; defaults to st.stxt (sidebar context)
     const color = colorOverride || st.stxt;
-    return `<div class="r-contact-block" style="font-size:${st.contactFontSize}px;margin-bottom:${st.ssg}px;color:${color}">
+    const bold  = st.contactBold      ? 'font-weight:700'          : '';
+    const ital  = st.contactItalic    ? 'font-style:italic'        : '';
+    const uline = st.contactUnderline ? 'text-decoration:underline' : '';
+    const deco  = [bold,ital,uline].filter(Boolean).join(';');
+    return `<div class="r-contact-block" style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-bottom:${st.ssg}px;color:${color};${deco}">
       ${items.map(item => `<div style="margin-bottom:3px">${item}</div>`).join('')}
     </div>`;
   },
@@ -2244,10 +2321,10 @@ const Render = {
   _contactItemsArray(d) {
     const out = [];
     if (d.phone)    out.push(`<span class="ie-hdr" data-field="hphone">${esc(d.phone)}</span>`);
-    if (d.email)    out.push(`<span class="ie-hdr" data-field="hemail">${esc(d.email)}</span>`);
-    if (d.linkedin) out.push(`<span class="ie-hdr" data-field="hlinkedin-lbl">${esc(d.linkedinLbl||d.linkedin)}</span>`);
+    if (d.email)    out.push(`<span class="ie-hdr" data-field="hemail"><a href="mailto:${esc(d.email)}" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.email)}</a></span>`);
+    if (d.linkedin) out.push(`<span class="ie-hdr" data-field="hlinkedin-lbl"><a href="${esc(d.linkedin)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.linkedinLbl||d.linkedin)}</a></span>`);
     if (d.location) out.push(`<span class="ie-hdr" data-field="hlocation">${esc(d.location)}</span>`);
-    if (d.web)      out.push(`<span class="ie-hdr" data-field="hweb-lbl">${esc(d.webLbl||d.web)}</span>`);
+    if (d.web)      out.push(`<span class="ie-hdr" data-field="hweb-lbl"><a href="${esc(d.web)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.webLbl||d.web)}</a></span>`);
     return out;
   },
 
@@ -2507,6 +2584,7 @@ const Render = {
 
   _attachInlineEditors() {
     $$('.ie-hdr').forEach(el => {
+      if (el.querySelector('a')) return;
       el.contentEditable = 'true';
       el.spellcheck = false;
       el.addEventListener('blur', () => {
@@ -3060,8 +3138,7 @@ const Design = {
     range.addEventListener('input', () => { History.pushDebounced(); apply(isInch ? parseFloat(range.value)/96 : range.value); });
     if (num) {
       num.placeholder = u;
-      num.addEventListener('input',  () => apply(num.value));
-      num.addEventListener('change', () => apply(num.value));
+      num.addEventListener('change', () => { History.pushDebounced(); apply(num.value); });
       num.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); num.blur(); } });
       num.value = isInch ? parseFloat((parseFloat(range.value)/96).toFixed(2)) : parseInt(range.value);
     }
@@ -3162,8 +3239,25 @@ const Storage = {
     if (save.fields) {
       const el = $('h-name'); if (el) el.value = save.fields.name || '';
     }
+    // Repopulate all personal info panel fields from contact section data
+    const contactSec = sections.find(s => s.id === 'contact');
+    if (contactSec && contactSec.data) {
+      const d = contactSec.data;
+      const set = (id, v) => { const el = $(id); if (el) el.value = v || ''; };
+      set('h-name',         d.name      || save.fields?.name || '');
+      set('h-phone',        d.phone);
+      set('h-email',        d.email);
+      set('h-loc',          d.location);
+      set('h-linkedin',     d.linkedin);
+      set('h-linkedin-lbl', d.linkedinLbl);
+      set('h-web',          d.web);
+      set('h-web-lbl',      d.webLbl);
+    }
     Design.syncControls();
     Panel.rebuildKeepOpen();
+    // Re-apply name after rebuildKeepOpen — panel rebuild re-creates h-name input from template default
+    const _nameEl = $('h-name');
+    if (_nameEl) _nameEl.value = (contactSec?.data && save.fields?.name) ? save.fields.name : (save.fields?.name || '');
     UI.closeModal();
   },
 
@@ -3217,6 +3311,12 @@ function doSave()    { Storage.save(); }
 function doLoad(i)   { Storage.load(i); }
 function doDelete(i) { Storage.del(i); }
 
+
+// Strips <a> wrappers from HTML for print path — keeps link text, removes href/target
+// so Chrome's print renderer is never asked to handle anchors in clipped absolute divs.
+function stripLinks(html) {
+  return html.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, '$1');
+}
 
 // ═══════════════════════════════════════════════════════════════
 // MODULE 8 · UI  (modals, toast, zoom, theme, tabs, AI)
@@ -3319,6 +3419,7 @@ const UI = {
     const isStandardLayout = st.layout === 'standard';
     const hasSplitHeader   = isModernLayout || isTopBarLayout || isStandardLayout;
     let headerHTML = '', bodyHTML = html, headerH = 0, bodyHTMLH = totalPrintH;
+    let bodySafeBreaks = null;
 
     if (hasSplitHeader) {
       const tmpParse = document.createElement('div');
@@ -3361,11 +3462,16 @@ const UI = {
 
       document.body.removeChild(tmpParse);
 
+      // page1BodyH computed here so it's available for safe break calculation below
+      const _p1h = Math.max(1, paper.h - headerH - pmb);
+
       const bodyMeasurer = document.createElement('div');
       bodyMeasurer.style.cssText = `position:fixed;left:-${paper.w+20}px;top:0;width:${paper.w}px;visibility:hidden`;
       bodyMeasurer.innerHTML = bodyHTML;
       document.body.appendChild(bodyMeasurer);
       bodyHTMLH = bodyMeasurer.scrollHeight;
+      // Compute safe breaks while measurer is in DOM (getBoundingClientRect needs live layout)
+      bodySafeBreaks = computeSafeBreaks(bodyMeasurer, _p1h, contentH, bodyHTMLH);
       document.body.removeChild(bodyMeasurer);
     }
 
@@ -3373,9 +3479,7 @@ const UI = {
 
     let printPages;
     if (hasSplitHeader) {
-      printPages = bodyHTMLH <= page1BodyH
-        ? 1
-        : 1 + Math.max(1, Math.ceil((bodyHTMLH - page1BodyH) / contentH));
+      printPages = bodySafeBreaks.length;
     } else {
       printPages = Math.max(1, Math.ceil(totalPrintH / paper.h));
     }
@@ -3401,20 +3505,20 @@ const UI = {
       }
 
       if (p === 0 && hasSplitHeader) {
-        // ── Modern / Top Bar page 1 ────────────────────────────────────
+        // ── Modern / Top Bar / Standard page 1 ────────────────────────────────────
         // Header: fixed exact height, flush at top:0, cannot bleed
         const hdrWrap = document.createElement('div');
         hdrWrap.style.cssText = `position:absolute;top:0;left:0;width:100%;height:${headerH}px;overflow:hidden;z-index:1`;
         hdrWrap.innerHTML = headerHTML;
         pageDiv.appendChild(hdrWrap);
 
-        // Body content: clip zone from headerH to page bottom-margin
+        // Body content: clip zone from headerH — height capped at safe break point
+        const page1SafeH = bodySafeBreaks[0];
         const bodyClip = document.createElement('div');
-        bodyClip.style.cssText = `position:absolute;top:${headerH}px;left:0;width:100%;height:${page1BodyH}px;overflow:hidden;z-index:2`;
+        bodyClip.style.cssText = `position:absolute;top:${headerH}px;left:0;width:100%;height:${page1SafeH}px;overflow:hidden;z-index:2`;
         const inner = document.createElement('div');
-        inner.style.cssText = `position:absolute;top:0;left:0;width:100%`;
+        inner.style.cssText = `position:absolute;top:0;left:0;width:100%;max-height:${page1SafeH}px;overflow:hidden`;
         inner.innerHTML = bodyHTML;
-        // Strip padding-top on columns/main so content starts at clip zone edge
         inner.querySelectorAll('.r-side,.r-main').forEach(el => {
           el.style.paddingTop    = pmt + 'px';
           el.style.paddingBottom = '0';
@@ -3423,12 +3527,14 @@ const UI = {
         pageDiv.appendChild(bodyClip);
 
       } else if (hasSplitHeader) {
-        // ── Modern / Top Bar continuation pages ───────────────────────
+        // ── Modern / Top Bar / Standard continuation pages ───────────────────────
+        const startOffset = bodySafeBreaks[p - 1];
+        const safeEnd     = bodySafeBreaks[p];
+        const visibleH    = safeEnd - startOffset;
         const clipZone = document.createElement('div');
-        clipZone.style.cssText = `position:absolute;top:${pmt}px;left:0;width:100%;height:${contentH}px;overflow:hidden;z-index:1`;
-        const bodyOffset = page1BodyH + (p - 1) * contentH;
+        clipZone.style.cssText = `position:absolute;top:${pmt}px;left:0;width:100%;height:${visibleH}px;overflow:hidden;z-index:1`;
         const inner = document.createElement('div');
-        inner.style.cssText = `position:absolute;top:${-bodyOffset}px;left:0;width:100%`;
+        inner.style.cssText = `position:absolute;top:${-startOffset}px;left:0;width:100%;max-height:${safeEnd}px;overflow:hidden`;
         inner.innerHTML = bodyHTML;
         inner.querySelectorAll('.r-side,.r-main').forEach(el => {
           el.style.paddingTop    = '0';
@@ -3486,13 +3592,149 @@ const UI = {
     `;
     document.head.appendChild(ps);
 
+    // ── PDF link overlay ──────────────────────────────────────────────────────
+    // Chrome annotates <a> for PDF links only when the full ancestor chain is
+    // position:static. Strategy: move frame briefly on-screen, measure each <a>,
+    // then inject static <a> clones directly into document.body. A @media print
+    // rule makes them position:absolute at the exact measured coordinates.
+    // Off-screen during normal view (left:-9999px), visible only to PDF renderer.
+
+    // Move frame on-screen temporarily so getBoundingClientRect returns real values
+    frame.style.left       = '0';
+    frame.style.visibility = 'hidden';
+
+    const pdfLinks = [];
+    frame.querySelectorAll('a[href]').forEach(a => {
+      const r = a.getBoundingClientRect();
+      if (r.width <= 0 || r.height <= 0) return;
+      pdfLinks.push({
+        href:   a.href,
+        target: a.target || '',
+        text:   a.textContent || '\u00a0',
+        top:    Math.round(r.top),
+        left:   Math.round(r.left),
+        width:  Math.round(r.width),
+        height: Math.round(r.height)
+      });
+    });
+
+    // Move frame back off-screen
+    frame.style.left       = '-9999px';
+    frame.style.visibility = '';
+
+    // Inject static <a> elements — position:static in DOM so Chrome annotates them.
+    // @media print CSS below positions them absolutely over the correct link areas.
+    const linkEls = pdfLinks.map(lk => {
+      const a = document.createElement('a');
+      a.className  = 'pdf-link-ann';
+      a.href       = lk.href;
+      if (lk.target) a.target = lk.target;
+      a.rel        = 'noopener';
+      a.textContent = lk.text;
+      a.dataset.ptop    = lk.top;
+      a.dataset.pleft   = lk.left;
+      a.dataset.pwidth  = lk.width;
+      a.dataset.pheight = lk.height;
+      // Off-screen in normal view
+      a.style.cssText = 'position:absolute;left:-9999px;top:-9999px;opacity:0;font-size:1px';
+      document.body.appendChild(a);
+      return a;
+    });
+
+    // Dynamic print style: position each <a> at its measured screen coordinate
+    const linkPrintStyle = document.createElement('style');
+    linkPrintStyle.id = 'pdf-link-print-style';
+    linkPrintStyle.textContent = '@media print{' +
+      pdfLinks.map((lk, i) =>
+        `.pdf-link-ann:nth-of-type(${i + 1}){` +
+        `position:fixed!important;` +
+        `top:${lk.top}px!important;` +
+        `left:${lk.left}px!important;` +
+        `width:${lk.width}px!important;` +
+        `height:${lk.height}px!important;` +
+        `opacity:0!important;display:block!important;overflow:hidden!important;` +
+        `font-size:1px!important;}`
+      ).join('') +
+    '}';
+    document.head.appendChild(linkPrintStyle);
+    // ─────────────────────────────────────────────────────────────────────────
+
     setTimeout(() => {
       window.print();
       setTimeout(() => {
         ps.remove();
         frame.remove();
+        linkEls.forEach(a => a.remove());
+        linkPrintStyle.remove();
       }, 1000);
     }, 100);
+  },
+
+  // ── Print with Links (new tab, normal flow, guaranteed PDF annotations) ────
+  printWithLinks() {
+    const paper  = PAPER[st.paper] || PAPER.letter;
+    const szMap  = { letter:'letter portrait', a4:'A4 portrait', legal:'legal portrait' };
+    const toIn   = v => (v / 96).toFixed(3) + 'in';
+    const builders = { classic:Render._buildClassic, sidebar:Render._buildSidebar,
+                       top:Render._buildTop, standard:Render._buildStandard };
+    const html = (builders[st.layout] || builders.classic).call(Render, paper);
+
+    const fontLink = document.querySelector('link[href*="fonts.googleapis"]');
+    const fontHref = fontLink ? fontLink.href : '';
+
+    // Grab the full CSS from the main document — guarantees identical rendering
+    const mainStyle = document.querySelector('style') ? document.querySelector('style').textContent : '';
+
+    const doc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Resume Export</title>
+${fontHref ? `<link href="${fontHref}" rel="stylesheet"/>` : ''}
+<style>
+${mainStyle}
+/* Override panel/UI styles that conflict in isolated context */
+html,body{background:#fff!important;width:${paper.w}px;margin:0 auto;overflow:visible;height:auto}
+#panel,#pw,#zoom-bar,.modal-overlay,#toast{display:none!important}
+.drag-handle{display:none!important}
+.ie-hdr[contenteditable]:hover,.ie-text:hover,.ie-hdr[contenteditable]:focus,.ie-text:focus{outline:none!important;background:none!important}
+a{color:inherit;text-decoration:none}
+@media print{
+  *{print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
+  @page{size:${szMap[st.paper]||'letter portrait'};margin:${toIn(st.mt)} ${toIn(st.mr)} ${toIn(st.mb)} ${toIn(st.ml)}}
+  html,body{width:100%!important;margin:0!important}
+  .rpage{box-shadow:none!important;margin:0!important;overflow:visible!important;height:auto!important}
+  .page-break-indicator{display:none!important}
+  .pb-overlay{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="rp-wrap" style="display:block">
+  <div class="rpage" style="width:${paper.w}px;background:#fff;overflow:visible;height:auto;box-shadow:none;position:static">
+    ${html}
+  </div>
+</div>
+</body>
+</html>`;
+
+    // srcdoc iframe shares parent origin — Chrome annotates <a> tags as PDF links
+    const old = document.getElementById('print-links-frame');
+    if (old) old.remove();
+
+    const iframe = document.createElement('iframe');
+    iframe.id = 'print-links-frame';
+    iframe.style.cssText = 'position:fixed;left:-9999px;top:0;width:' + paper.w + 'px;height:' + paper.h + 'px;border:none;visibility:hidden';
+    iframe.srcdoc = doc;
+    document.body.appendChild(iframe);
+
+    iframe.addEventListener('load', () => {
+      setTimeout(() => {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+        setTimeout(() => iframe.remove(), 2000);
+      }, 800);
+    });
   },
 
   // ── AI bullets ──────────────────────────────────────────
@@ -3506,6 +3748,7 @@ function openFaqModal()     { UI.openModal('faq-modal'); }
 function closeModal()       { UI.closeModal(); }
 function togglePanelTheme() { UI.toggleTheme(); }
 function printResume()      { UI.print(); }
+function printResumeWithLinks() { UI.printWithLinks(); }
 function showToast(msg, d)  { UI.showToast(msg, d === undefined ? 1800 : d); }
 function setZoom(dir)       { UI.setZoom(dir); }
 function historyUndo()      { History.undo(); }
