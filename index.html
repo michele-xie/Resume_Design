@@ -2139,7 +2139,7 @@ const Render = {
     const topAlign = st.nameAlign === 'center' ? 'center' : st.nameAlign === 'right' ? 'right' : 'left';
     const header = `<div style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:${st.mt*0.8|0}px ${st.ml}px;color:${st.nameBarTxt};text-align:${topAlign};display:flex;flex-direction:column;justify-content:center">
       <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:${st.nameBarBold?'700':'400'}!important;${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(nameVal)}</div>
-      <div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-top:6px">${this._inlineContactHTML(contactSec)}</div>
+      <div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-top:6px;${st.contactBold?'font-weight:700;':''}${st.contactItalic?'font-style:italic;':''}${st.contactUnderline?'text-decoration:underline;':''}">${this._inlineContactHTML(contactSec)}</div>
     </div>`;
 
     return `<div class="rresume" style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">
