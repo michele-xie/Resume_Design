@@ -571,9 +571,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .r-jdates{white-space:nowrap}
 .r-blist{list-style:none;margin-top:5px}
 .r-blist li{padding-left:14px;position:relative;margin-bottom:3px}
-.r-blist li::before{content:'–';position:absolute;left:0;color:inherit}
+.r-blist li::before{content:'-';position:absolute;left:0;color:inherit}
 .r-blist.bl-bullet li::before{content:'•'}
-.r-blist.bl-dash li::before{content:'–'}
+.r-blist.bl-dash li::before{content:'-'}
 .r-blist li a{color:inherit}
 
 /* edu */
@@ -783,7 +783,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           </div>
           <div class="ef"><label>Bullet Style</label>
             <select id="bullet-style">
-              <option value="dash">Dash  –</option>
+              <option value="dash">Dash  -</option>
               <option value="bullet">Bullet  •</option>
             </select>
           </div>
@@ -1334,21 +1334,21 @@ let sections = [
     data:{ text:'[Sample] Results-driven professional with experience in [your field]. Replace this summary with 2–3 sentences highlighting your background, key strengths, and the value you bring.' }},
   { id:'s2', title:'Experience', type:'jobs', loc:'main', locked:true,
     data:{ jobs:[
-      { title:'Senior Product Manager', company:'Company 1', location:'City, State', dates:'Jan 2022 – Present',
+      { title:'Senior Product Manager', company:'Company 1', location:'City, State', dates:'Jan 2022 - Present',
         bullets:['[Sample] Led product strategy for a core platform, resulting in measurable revenue growth and improved customer retention.',
                  '[Sample] Defined and executed a multi-year roadmap, aligning engineering, design, and go-to-market teams on shared goals.',
                  '[Sample] Launched a new product capability that improved key customer satisfaction metrics within 6 months.',
                  '[Sample] Partnered with Sales and Customer Success to reduce churn through targeted feature development.']},
-      { title:'Product Manager', company:'Company 1', location:'City, State', dates:'Jun 2019 – Dec 2021',
+      { title:'Product Manager', company:'Company 1', location:'City, State', dates:'Jun 2019 - Dec 2021',
         bullets:['[Sample] Owned the integrations roadmap, delivering multiple third-party connectors that expanded market reach.',
                  '[Sample] Led a redesign effort based on user research that improved activation and engagement rates.']},
-      { title:'Associate Product Manager', company:'Company 2', location:'City, State', dates:'Jul 2017 – May 2019',
+      { title:'Associate Product Manager', company:'Company 2', location:'City, State', dates:'Jul 2017 - May 2019',
         bullets:['[Sample] Collaborated with engineering to streamline onboarding, significantly reducing time-to-value for new users.',
                  '[Sample] Maintained a competitive intelligence framework used to inform quarterly product strategy reviews.',
                  '[Sample] Supported the launch of an enterprise security module with strong adoption across key accounts.']}
     ]}},
   { id:'s3', title:'Education', type:'education', loc:'main', locked:false,
-    data:{ items:[{ school:'School 1', degree:'B.S. – Information Systems & Management', location:'City, State', dates:'May 2017' }]}},
+    data:{ items:[{ school:'School 1', degree:'B.S. - Information Systems & Management', location:'City, State', dates:'May 2017' }]}},
   { id:'s4', title:'Skills', type:'tags', loc:'side',
     data:{ tags:['Product Strategy','Roadmap Planning','Agile / Scrum','Stakeholder Management','User Research','Data Analysis','A/B Testing','Go-to-Market','SQL','Figma','JIRA','Salesforce'], columns:1, compact:false }},
   { id:'s5', title:'Certifications', type:'list', loc:'side',
@@ -2139,7 +2139,7 @@ const Render = {
     const topAlign = st.nameAlign === 'center' ? 'center' : st.nameAlign === 'right' ? 'right' : 'left';
     const header = `<div style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:${st.mt*0.8|0}px ${st.ml}px;color:${st.nameBarTxt};text-align:${topAlign};display:flex;flex-direction:column;justify-content:center">
       <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:${st.nameBarBold?'700':'400'}!important;${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(nameVal)}</div>
-      <div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-top:6px;${st.contactBold?'font-weight:700;':''}${st.contactItalic?'font-style:italic;':''}${st.contactUnderline?'text-decoration:underline;':''}">${this._inlineContactHTML(contactSec)}</div>
+      <div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-top:6px">${this._inlineContactHTML(contactSec)}</div>
     </div>`;
 
     return `<div class="rresume" style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">
@@ -2224,7 +2224,7 @@ const Render = {
   },
 
   _getSepChar() {
-    const map = { pipe:'|', bullet:'•', dot:'·', diamond:'◆', dash:'–', slash:'/' };
+    const map = { pipe:'|', bullet:'•', dot:'·', diamond:'◆', dash:'-', slash:'/' };
     return map[st.barContactSep] || '|';
   },
 
@@ -2327,7 +2327,7 @@ const Render = {
 
       const rolesHTML = jobs.map(({ job, ji }) => {
         const indent = 0;
-        const bullSymbol = st.bulletStyle === 'bullet' ? '•' : st.bulletStyle === 'arrow' ? '›' : '–';
+        const bullSymbol = st.bulletStyle === 'bullet' ? '•' : st.bulletStyle === 'arrow' ? '›' : '-';
         const bullsHTML = job.bullets.map((b, bi) => ({ b, bi }))
           .filter(({ b }) => b !== undefined && b !== null)
           .map(({ b, bi }) =>
@@ -2452,7 +2452,7 @@ const Render = {
     }
 
     // default: bullet (• or –)
-    const sym = st.bulletStyle === 'bullet' ? '•' : '–';
+    const sym = st.bulletStyle === 'bullet' ? '•' : '-';
     return `<div>${items.map((t, ii) =>
       `<div class="stag-draggable" draggable="true" data-sid="${sec.id}" data-field="listitem" data-ti="${ii}" style="font-size:${fs}px;padding:1px 0;line-height:${st.lineHeight};color:${color};${bDeco}">${sym} <span class="ie-text" data-sid="${sec.id}" data-field="listitem" data-bi="${ii}">${esc(t)}</span></div>`
     ).join('')}</div>`;
@@ -3438,7 +3438,10 @@ const UI = {
         const clipZone = document.createElement('div');
         clipZone.style.cssText = `position:absolute;top:${pmt}px;left:0;width:100%;height:${visibleH}px;overflow:hidden;z-index:1`;
         const inner = document.createElement('div');
-        inner.style.cssText = `position:absolute;top:${-startOffset}px;left:0;width:100%;max-height:${safeEnd}px;overflow:hidden`;
+        // Modern (classic) needs pmt added to inner offset to respect top margin on continuation pages.
+        // Top Bar and Standard were already correct with the raw negative offset.
+        const innerTop = isModernLayout ? pmt - startOffset : -startOffset;
+        inner.style.cssText = `position:absolute;top:${innerTop}px;left:0;width:100%;max-height:${safeEnd}px;overflow:hidden`;
         inner.innerHTML = stripEditable(bodyHTML);
         inner.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
         inner.querySelectorAll('.r-side,.r-main').forEach(el => {
