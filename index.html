@@ -74,6 +74,13 @@
 #panel.theme-light #panel-footer{border-top-color:var(--bord);background:var(--surf)}
 #panel.theme-light .pf-save{background:rgba(109,184,154,.1);color:#1f6b50;border-color:rgba(109,184,154,.5)}
 #panel.theme-light .pf-load{background:rgba(107,159,212,.1);color:#254e9a;border-color:rgba(107,159,212,.4)}
+#panel.theme-light .pdf-reminder{background:rgba(161,120,40,.1);border-left-color:#9a6e1a;color:#1a1714}
+#panel.theme-light .pdf-reminder strong{color:#1a1714}
+#panel.theme-light .pdf-reminder span{color:#1a1714}
+.pdf-reminder-icon{color:var(--acc)}
+.pdf-reminder-hdr{color:var(--acc)}
+#panel.theme-light .pdf-reminder-icon{color:#1a1714}
+#panel.theme-light .pdf-reminder-hdr{color:#1a1714}
 #panel.theme-light .btn-ghost{border-color:var(--bord2);color:#3e3a36}
 #panel.theme-light .btn-ghost:hover{color:var(--txt)}
 #panel.theme-light .style-btn{border-color:var(--bord2);color:#3e3a36}
@@ -1107,9 +1114,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       <button class="pf-btn pf-load" onclick="openLoadModal()">📂 Load</button>
     </div>
     <button class="pf-btn pf-print" onclick="printResume()" title="Export PDF — precise layout, exact margins">⬇ Export PDF</button>
-    <div style="font-size:9px;color:var(--muted);line-height:1.6;margin-top:5px;padding:5px 8px;background:var(--surf2);border-radius:5px;border-left:2px solid var(--acc)">
-      <strong style="color:var(--muted2)">In Chrome's print dialog:</strong><br>
-      Destination → <strong style="color:var(--muted2)">Save as PDF</strong> &nbsp;·&nbsp; Margins → <strong style="color:var(--muted2)">None</strong>
+    <div class="pdf-reminder" style="font-size:9.5px;color:var(--txt);line-height:1.7;margin-top:5px;padding:6px 9px;background:rgba(201,169,110,.12);border-radius:5px;border-left:3px solid var(--acc)">
+      <span class="pdf-reminder-icon" style="font-weight:700;margin-right:4px">⚠</span><strong class="pdf-reminder-hdr" style="letter-spacing:.02em">In Chrome's print dialog:</strong><br>
+      Destination → <strong style="color:var(--txt)">Save as PDF</strong> &nbsp;·&nbsp; Margins → <strong style="color:var(--txt)">None</strong>
     </div>
     <div style="text-align:center;font-size:9px;color:var(--muted);letter-spacing:.04em;margin-top:4px">© 2026 Michele Xie. All rights reserved.</div>
   </div>
