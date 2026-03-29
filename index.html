@@ -684,9 +684,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           <div class="ef"><label>Email</label><input type="text" id="h-email" value="user@email.com" oninput="renderResume()"></div>
           <div class="ef"><label>Location</label><input type="text" id="h-loc" value="City, State" oninput="renderResume()"></div>
           <div class="ef"><label>LinkedIn URL</label><input type="url" id="h-linkedin" value="https://linkedin.com/in/yourprofile" placeholder="https://linkedin.com/in/..." oninput="renderResume()"></div>
-          <div class="ef"><label>LinkedIn Display Text</label><input type="text" id="h-linkedin-lbl" value="linkedin.com/in/yourprofile" oninput="renderResume()"></div>
           <div class="ef"><label>Website URL <span style="opacity:.5">(optional)</span></label><input type="url" id="h-web" value="" placeholder="https://..." oninput="renderResume()"></div>
-          <div class="ef"><label>Website Display Text</label><input type="text" id="h-web-lbl" value="" oninput="renderResume()"></div>
         </div>
       </div>
 
@@ -816,53 +814,24 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         <div class="ds-group-hdr collapsible">🔤 Typography</div>
         <div class="ds-group-body">
 
+          <!-- Global Font Type -->
+          <div class="ef"><label>Font Type <span class="ds-badge" style="font-size:8px">Entire page</span></label>
+            <select id="f-global">
+              <option value="'Calibri',sans-serif" selected>Calibri</option>
+              <option value="Georgia,serif">Georgia</option>
+              <option value="'Times New Roman',serif">Times New Roman</option>
+              <option value="'Roboto Slab',serif">Roboto Slab</option>
+              <option value="'PT Serif',serif">PT Serif</option>
+              <option value="'Spectral',serif">Spectral</option>
+            </select>
+            <div class="font-specimen" id="spec-f-global" style="font-family:'Calibri',sans-serif">Aa — All Text</div>
+          </div>
+
+          <div class="typo-divider"></div>
+
           <!-- Heading & Name — collapsible sub-section -->
           <div class="typo-cat-hdr collapsible-cat" id="typo-cat-1">① Heading &amp; Name <span class="typo-chevron">▾</span></div>
           <div class="typo-cat-body" id="typo-body-1">
-            <div class="ef"><label>Font Type</label>
-              <select id="fh">
-                <optgroup label="— System Fonts —">
-                <option value="Arial,sans-serif" selected>Arial</option>
-                <option value="'Calibri',sans-serif">Calibri</option>
-                <option value="'Times New Roman',serif">Times New Roman</option>
-                <option value="Georgia,serif">Georgia</option>
-                <option value="'Trebuchet MS',sans-serif">Trebuchet MS</option>
-                <option value="Verdana,sans-serif">Verdana</option>
-                <option value="'Garamond',serif">Garamond</option>
-                <option value="'Book Antiqua',serif">Book Antiqua</option>
-                </optgroup>
-                <optgroup label="— Sans Serif —">
-                <option value="'DM Sans',sans-serif">DM Sans</option>
-                <option value="'Inter',sans-serif">Inter</option>
-                <option value="'Montserrat',sans-serif">Montserrat</option>
-                <option value="'Raleway',sans-serif">Raleway</option>
-                <option value="'Nunito',sans-serif">Nunito</option>
-                <option value="'Work Sans',sans-serif">Work Sans</option>
-                <option value="'Jost',sans-serif">Jost</option>
-                <option value="'Lexend',sans-serif">Lexend</option>
-                <option value="'Outfit',sans-serif">Outfit</option>
-                <option value="'Syne',sans-serif">Syne</option>
-                <option value="'Josefin Sans',sans-serif">Josefin Sans</option>
-                <option value="'Lato',sans-serif">Lato</option>
-                </optgroup>
-                <optgroup label="— Serif —">
-                <option value="'Playfair Display',serif">Playfair Display</option>
-                <option value="'Fraunces',serif">Fraunces</option>
-                <option value="'Cormorant Garamond',serif">Cormorant Garamond</option>
-                <option value="'EB Garamond',serif">EB Garamond</option>
-                <option value="'Crimson Pro',serif">Crimson Pro</option>
-                <option value="'Source Serif 4',serif">Source Serif 4</option>
-                <option value="'Merriweather',serif">Merriweather</option>
-                <option value="'IBM Plex Serif',serif">IBM Plex Serif</option>
-                <option value="'PT Serif',serif">PT Serif</option>
-                <option value="'Spectral',serif">Spectral</option>
-                <option value="'Bitter',serif">Bitter</option>
-                <option value="'Roboto Slab',serif">Roboto Slab</option>
-                <option value="'Libre Baskerville',serif">Libre Baskerville</option>
-                </optgroup>
-              </select>
-              <div class="font-specimen" id="spec-fh" style="font-family:Arial,sans-serif">Aa — Heading &amp; Name</div>
-            </div>
             <div class="ef"><label>Name Font Size</label>
               <div class="fs-row"><input type="range" id="r-nfs" min="14" max="60" value="30"><input class="snum" id="v-nfs" type="number" min="14" max="60" value="30"></div>
             </div>
@@ -875,56 +844,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
             </div>
           </div>
 
-
           <div class="typo-divider"></div>
 
           <!-- Contact — collapsible sub-section -->
           <div class="typo-cat-hdr collapsible-cat" id="typo-cat-contact">② Contact <span class="typo-chevron">▾</span></div>
           <div class="typo-cat-body" id="typo-body-contact">
-            <div class="ef"><label>Font Type</label>
-              <select id="fc-contact">
-                <optgroup label="— System Fonts —">
-                <option value="Arial,sans-serif" selected>Arial</option>
-                <option value="'Calibri',sans-serif">Calibri</option>
-                <option value="'Times New Roman',serif">Times New Roman</option>
-                <option value="Georgia,serif">Georgia</option>
-                <option value="'Trebuchet MS',sans-serif">Trebuchet MS</option>
-                <option value="Verdana,sans-serif">Verdana</option>
-                <option value="'Garamond',serif">Garamond</option>
-                <option value="'Book Antiqua',serif">Book Antiqua</option>
-                </optgroup>
-                <optgroup label="— Sans Serif —">
-                <option value="'DM Sans',sans-serif">DM Sans</option>
-                <option value="'Inter',sans-serif">Inter</option>
-                <option value="'Montserrat',sans-serif">Montserrat</option>
-                <option value="'Raleway',sans-serif">Raleway</option>
-                <option value="'Nunito',sans-serif">Nunito</option>
-                <option value="'Work Sans',sans-serif">Work Sans</option>
-                <option value="'Jost',sans-serif">Jost</option>
-                <option value="'Lexend',sans-serif">Lexend</option>
-                <option value="'Outfit',sans-serif">Outfit</option>
-                <option value="'Syne',sans-serif">Syne</option>
-                <option value="'Josefin Sans',sans-serif">Josefin Sans</option>
-                <option value="'Lato',sans-serif">Lato</option>
-                </optgroup>
-                <optgroup label="— Serif —">
-                <option value="'Playfair Display',serif">Playfair Display</option>
-                <option value="'Fraunces',serif">Fraunces</option>
-                <option value="'Cormorant Garamond',serif">Cormorant Garamond</option>
-                <option value="'EB Garamond',serif">EB Garamond</option>
-                <option value="'Crimson Pro',serif">Crimson Pro</option>
-                <option value="'Source Serif 4',serif">Source Serif 4</option>
-                <option value="'Merriweather',serif">Merriweather</option>
-                <option value="'IBM Plex Serif',serif">IBM Plex Serif</option>
-                <option value="'PT Serif',serif">PT Serif</option>
-                <option value="'Spectral',serif">Spectral</option>
-                <option value="'Bitter',serif">Bitter</option>
-                <option value="'Roboto Slab',serif">Roboto Slab</option>
-                <option value="'Libre Baskerville',serif">Libre Baskerville</option>
-                </optgroup>
-              </select>
-              <div class="font-specimen" id="spec-fc-contact" style="font-family:Arial,sans-serif">Aa — Contact</div>
-            </div>
             <div class="ef"><label>Font Size</label>
               <div class="fs-row"><input type="range" id="r-cfs" min="8" max="14" value="11" step="1"><input class="snum" id="v-cfs" type="number" min="8" max="14" value="11"></div>
             </div>
@@ -942,50 +866,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
           <!-- Body Content — collapsible sub-section -->
           <div class="typo-cat-hdr collapsible-cat" id="typo-cat-2">③ Body Content <span class="typo-chevron">▾</span></div>
           <div class="typo-cat-body" id="typo-body-2">
-            <div class="ef"><label>Font Type <span class="ds-badge" style="font-size:8px">Applies to all below</span></label>
-              <select id="fb">
-                <optgroup label="— System Fonts —">
-                <option value="Arial,sans-serif" selected>Arial</option>
-                <option value="'Calibri',sans-serif">Calibri</option>
-                <option value="'Times New Roman',serif">Times New Roman</option>
-                <option value="Georgia,serif">Georgia</option>
-                <option value="'Trebuchet MS',sans-serif">Trebuchet MS</option>
-                <option value="Verdana,sans-serif">Verdana</option>
-                <option value="'Garamond',serif">Garamond</option>
-                <option value="'Book Antiqua',serif">Book Antiqua</option>
-                </optgroup>
-                <optgroup label="— Sans Serif —">
-                <option value="'DM Sans',sans-serif">DM Sans</option>
-                <option value="'Inter',sans-serif">Inter</option>
-                <option value="'Montserrat',sans-serif">Montserrat</option>
-                <option value="'Raleway',sans-serif">Raleway</option>
-                <option value="'Nunito',sans-serif">Nunito</option>
-                <option value="'Work Sans',sans-serif">Work Sans</option>
-                <option value="'Jost',sans-serif">Jost</option>
-                <option value="'Lexend',sans-serif">Lexend</option>
-                <option value="'Outfit',sans-serif">Outfit</option>
-                <option value="'Syne',sans-serif">Syne</option>
-                <option value="'Josefin Sans',sans-serif">Josefin Sans</option>
-                <option value="'Lato',sans-serif">Lato</option>
-                </optgroup>
-                <optgroup label="— Serif —">
-                <option value="'Playfair Display',serif">Playfair Display</option>
-                <option value="'Fraunces',serif">Fraunces</option>
-                <option value="'Cormorant Garamond',serif">Cormorant Garamond</option>
-                <option value="'EB Garamond',serif">EB Garamond</option>
-                <option value="'Crimson Pro',serif">Crimson Pro</option>
-                <option value="'Source Serif 4',serif">Source Serif 4</option>
-                <option value="'Merriweather',serif">Merriweather</option>
-                <option value="'IBM Plex Serif',serif">IBM Plex Serif</option>
-                <option value="'PT Serif',serif">PT Serif</option>
-                <option value="'Spectral',serif">Spectral</option>
-                <option value="'Bitter',serif">Bitter</option>
-                <option value="'Roboto Slab',serif">Roboto Slab</option>
-                <option value="'Libre Baskerville',serif">Libre Baskerville</option>
-                </optgroup>
-              </select>
-              <div class="font-specimen" id="spec-fb" style="font-family:Arial,sans-serif">Aa — Body Content</div>
-            </div>
             <!-- Section Header sub-group -->
             <div class="typo-sub-group">
               <div class="typo-sub-hdr">Section Header</div>
@@ -1227,6 +1107,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       <button class="pf-btn pf-load" onclick="openLoadModal()">📂 Load</button>
     </div>
     <button class="pf-btn pf-print" onclick="printResume()" title="Export PDF — precise layout, exact margins">⬇ Export PDF</button>
+    <div style="font-size:9px;color:var(--muted);line-height:1.6;margin-top:5px;padding:5px 8px;background:var(--surf2);border-radius:5px;border-left:2px solid var(--acc)">
+      <strong style="color:var(--muted2)">In Chrome's print dialog:</strong><br>
+      Destination → <strong style="color:var(--muted2)">Save as PDF</strong> &nbsp;·&nbsp; Margins → <strong style="color:var(--muted2)">None</strong>
+    </div>
     <div style="text-align:center;font-size:9px;color:var(--muted);letter-spacing:.04em;margin-top:4px">© 2026 Michele Xie. All rights reserved.</div>
   </div>
 </div>
@@ -1287,7 +1171,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       </div>
 
       <div class="faq-section">
-        <div class="faq-section-title">Printing &amp; Extra Pages</div>
+        <div class="faq-section-title">Printing &amp; Export</div>
         <div class="faq-q">Why does my PDF have a blank or partial extra page?</div>
         <div class="faq-a">This can happen when the sidebar background extends slightly beyond the content area. To remove the extra page:<br><br>
           1. In Chrome's print dialog, click <strong>More settings</strong>.<br>
@@ -1297,6 +1181,14 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
         </div>
         <div class="faq-q">How do I know how many pages my resume is?</div>
         <div class="faq-a">The live preview shows a dashed page break line with a page counter (e.g. <strong>Page 1 / 2</strong>) whenever content exceeds one page. Use this as your guide before exporting. If you see a page break, trim content or reduce spacing to stay on one page.</div>
+        <div class="faq-q">How do I export my resume as a PDF?</div>
+        <div class="faq-a">
+          Click <strong>⬇ Export PDF</strong>. Chrome's print dialog will open. Follow these steps for the best result:<br><br>
+          <strong>1.</strong> Set <strong>Destination</strong> to <strong>Save as PDF</strong> — this is critical. "Save as PDF" preserves selectable text and clickable links. Sending to a physical printer does not.<br>
+          <strong>2.</strong> Set <strong>Margins</strong> to <strong>None</strong> — the app controls margins via the Page Margins settings. Adding browser margins on top will push content off-center.<br>
+          <strong>3.</strong> Click <strong>Save</strong> and choose your filename.<br><br>
+          <span class="faq-tip">With these settings your PDF will have selectable text, be ATS-readable, and preserve all your margin settings.</span>
+        </div>
       </div>
 
       <div class="faq-section">
@@ -1429,8 +1321,8 @@ const SAVE_KEY = 'micheleAI_saves';
 let sections = [
   { id:'contact', title:'Contact', type:'contact', loc:'side', locked:true,
     data:{ phone:'(000) 000-0000', email:'user@email.com',
-           linkedin:'https://linkedin.com/in/yourprofile', linkedinLbl:'linkedin.com/in/yourprofile',
-           location:'City, State', web:'', webLbl:'' }},
+           linkedin:'https://linkedin.com/in/yourprofile',
+           location:'City, State', web:'' }},
   { id:'s1', title:'Summary', type:'text', loc:'main',
     data:{ text:'[Sample] Results-driven professional with experience in [your field]. Replace this summary with 2–3 sentences highlighting your background, key strengths, and the value you bring.' }},
   { id:'s2', title:'Experience', type:'jobs', loc:'main', locked:true,
@@ -1459,20 +1351,20 @@ let sections = [
 const st = {
   layout:'classic',
   acc:'#1a1a1a', txt:'#1a1a1a', sbg:'#1a1a1a', stxt:'#ffffff',
-  contactMainColor:'#1a1a1a', contactSideColor:'#ffffff', contactFontSize:11, contactFontFamily:'Arial,sans-serif',
+  contactMainColor:'#1a1a1a', contactSideColor:'#ffffff', contactFontSize:11, contactFontFamily:"'Calibri',sans-serif",
   contactBold:false, contactItalic:false, contactUnderline:false,
-  fh:'Arial,sans-serif', fb:'Arial,sans-serif', fc:'Arial,sans-serif',
+  fh:"'Calibri',sans-serif", fb:"'Calibri',sans-serif", fc:"'Calibri',sans-serif",
   bs:12, ss:13, sw:33,
   nameBarBg:'#1a1a1a', nameBarTxt:'#ffffff', nameBarSub:'#ffffff',
   nameBarH:80, nameBarFontSize:30, taglineFontSize:14,
-  nameBarBold:false, nameBarItalic:false, nameBarUnderline:false,
+  nameBarBold:true, nameBarItalic:false, nameBarUnderline:false,
   nameAlign:'center', barContactInBar:true, barContactSep:'pipe', barContactSpacing:10,
-  companyFontSize:12, companyColor:'#2a2a2a', companyFontFamily:'Arial,sans-serif',
+  companyFontSize:12, companyColor:'#2a2a2a', companyFontFamily:"'Calibri',sans-serif",
   sidePos:'left',
   mt:20, mb:48, ml:48, mr:48,
   msg:18, msp:10, ssg:32, ssp:10,
   bulletStyle:'bullet',
-  secHdrBold:false, secHdrItalic:false, secHdrUnderline:false,
+  secHdrBold:true, secHdrItalic:false, secHdrUnderline:false,
   coLocBold:false,  coLocItalic:false,  coLocUnderline:false,
   jtDateBold:false, jtDateItalic:false, jtDateUnderline:false,
   bodyBold:false,   bodyItalic:false,   bodyUnderline:false,
@@ -1509,9 +1401,7 @@ const History = {
         email:      $('h-email')?.value       || '',
         location:   $('h-loc')?.value         || '',
         linkedin:   $('h-linkedin')?.value    || '',
-        linkedinLbl:$('h-linkedin-lbl')?.value|| '',
         web:        $('h-web')?.value         || '',
-        webLbl:     $('h-web-lbl')?.value     || '',
       }
     };
   },
@@ -1539,7 +1429,7 @@ const History = {
       const set = (id, v) => { const el=$(id); if (el) el.value = v||''; };
       set('h-name', f.name); set('h-phone', f.phone); set('h-email', f.email);
       set('h-loc', f.location); set('h-linkedin', f.linkedin);
-      set('h-linkedin-lbl', f.linkedinLbl); set('h-web', f.web); set('h-web-lbl', f.webLbl);
+      set('h-web', f.web);
     }
     Design.syncControls();
     Panel.rebuildKeepOpen();
@@ -1580,7 +1470,7 @@ const Sections = {
 
   updContact(field, v) {
     getSec('contact').data[field] = v;
-    const map = {phone:'h-phone',email:'h-email',linkedin:'h-linkedin',linkedinLbl:'h-linkedin-lbl',location:'h-loc',web:'h-web',webLbl:'h-web-lbl'};
+    const map = {phone:'h-phone',email:'h-email',linkedin:'h-linkedin',location:'h-loc',web:'h-web'};
     if (map[field]) { const el=$(map[field]); if (el && el.value !== v) el.value = v; }
     Render.resume();
   },
@@ -1879,10 +1769,8 @@ const Panel = {
     <div class="ef"><label>Phone</label><input type="text" value="${esc(d.phone||'')}" oninput="updContact('phone',this.value)"></div>
     <div class="ef"><label>Email</label><input type="text" value="${esc(d.email||'')}" oninput="updContact('email',this.value)"></div>
     <div class="ef"><label>LinkedIn URL</label><input type="url" value="${esc(d.linkedin||'')}" oninput="updContact('linkedin',this.value)" placeholder="https://linkedin.com/in/..."></div>
-    <div class="ef"><label>LinkedIn Display Text</label><input type="text" value="${esc(d.linkedinLbl||'')}" oninput="updContact('linkedinLbl',this.value)"></div>
     <div class="ef"><label>Location</label><input type="text" value="${esc(d.location||'')}" oninput="updContact('location',this.value)"></div>
-    <div class="ef"><label>Website URL (optional)</label><input type="url" value="${esc(d.web||'')}" oninput="updContact('web',this.value)" placeholder="https://..."></div>
-    <div class="ef"><label>Website Display Text</label><input type="text" value="${esc(d.webLbl||'')}" oninput="updContact('webLbl',this.value)"></div>`;
+    <div class="ef"><label>Website URL (optional)</label><input type="url" value="${esc(d.web||'')}" oninput="updContact('web',this.value)" placeholder="https://..."></div>`;
   },
 
   _edText(sec) {
@@ -2224,7 +2112,7 @@ const Render = {
     const sideOnLeft = (st.sidePos || 'left') === 'left';
 
     const sideHtml = `<div class="r-side" style="width:${sw}%;background:${st.sbg};color:${st.stxt};padding:${st.mt}px ${st.ml*0.6|0}px ${st.mb}px ${sideOnLeft?st.ml:st.ml*0.6|0}px">
-      <div class="r-name-sb ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.stxt};margin-bottom:12px;font-weight:${st.nameBarBold?'700':'600'};${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(($('h-name')||{}).value||'Your Name')}</div>
+      <div class="r-name-sb ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.stxt};margin-bottom:12px;font-weight:${st.nameBarBold?'700':'400'}!important;${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(($('h-name')||{}).value||'Your Name')}</div>
       ${this._buildContactBlock(contactSec)}
       ${sideSecs.map(s => this._renderSectionHTML(s)).join('')}
     </div>`;
@@ -2243,7 +2131,7 @@ const Render = {
 
     const topAlign = st.nameAlign === 'center' ? 'center' : st.nameAlign === 'right' ? 'right' : 'left';
     const header = `<div style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:${st.mt*0.8|0}px ${st.ml}px;color:${st.nameBarTxt};text-align:${topAlign};display:flex;flex-direction:column;justify-content:center">
-      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:${st.nameBarBold?'700':'600'};${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(nameVal)}</div>
+      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;font-weight:${st.nameBarBold?'700':'400'}!important;${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}">${esc(nameVal)}</div>
       <div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;margin-top:6px">${this._inlineContactHTML(contactSec)}</div>
     </div>`;
 
@@ -2268,7 +2156,7 @@ const Render = {
 
     return `<div style="font-family:${st.fb};font-size:${st.bs}px;color:${st.txt}">
       <div style="padding:${st.mt}px ${st.mr}px ${Math.round(st.mt*0.3)}px ${st.ml}px;text-align:center">
-        <div class="ie-hdr r-name" data-field="hname" style="font-size:${st.nameBarFontSize}px;font-family:${st.fh};font-weight:${st.nameBarBold?'700':'600'};${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}color:${st.txt};letter-spacing:.01em">${esc(nameVal)}</div>
+        <div class="ie-hdr r-name" data-field="hname" style="font-size:${st.nameBarFontSize}px;font-family:${st.fh};font-weight:${st.nameBarBold?'700':'400'}!important;${st.nameBarItalic?'font-style:italic;':''}${st.nameBarUnderline?'text-decoration:underline;':''}color:${st.txt};letter-spacing:.01em">${esc(nameVal)}</div>
         ${titleVal ? `<div class="ie-hdr" data-field="htitle" style="font-size:${st.taglineFontSize}px;color:${st.txt};margin-top:2px">${esc(titleVal)}</div>` : ''}
         ${contactLine ? `<div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;color:${st.txt};margin-top:4px;line-height:1.6;${st.contactBold?'font-weight:700;':''}${st.contactItalic?'font-style:italic;':''}${st.contactUnderline?'text-decoration:underline;':''}">${contactLine}</div>` : ''}
       </div>
@@ -2287,11 +2175,11 @@ const Render = {
     const uline    = st.nameBarUnderline ? 'text-decoration:underline' : '';
 
     const contactLine = st.barContactInBar
-      ? `<div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;color:${st.nameBarSub};margin-top:6px;text-align:${align}">${this._inlineContactHTML(contactSec)}</div>`
+      ? `<div style="font-family:${st.contactFontFamily||'inherit'};font-size:${st.contactFontSize}px;color:${st.nameBarSub};margin-top:6px;text-align:${align};${st.contactBold?'font-weight:700;':''}${st.contactItalic?'font-style:italic;':''}${st.contactUnderline?'text-decoration:underline;':''}">${this._inlineContactHTML(contactSec)}</div>`
       : '';
 
     return `<div class="r-namebar" style="background:${st.nameBarBg};min-height:${st.nameBarH}px;padding:16px ${st.ml}px;display:flex;flex-direction:column;justify-content:center;text-align:${align}">
-      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.nameBarTxt};${bold};${italic};${uline}">${esc(nameVal)}</div>
+      <div class="ie-hdr" data-field="hname" style="font-family:${st.fh};font-size:${st.nameBarFontSize}px;color:${st.nameBarTxt};${st.nameBarBold?'font-weight:700!important':'font-weight:400'};${italic};${uline}">${esc(nameVal)}</div>
       ${contactLine}
     </div>`;
   },
@@ -2321,10 +2209,10 @@ const Render = {
   _contactItemsArray(d) {
     const out = [];
     if (d.phone)    out.push(`<span class="ie-hdr" data-field="hphone">${esc(d.phone)}</span>`);
-    if (d.email)    out.push(`<span class="ie-hdr" data-field="hemail"><a href="mailto:${esc(d.email)}" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.email)}</a></span>`);
-    if (d.linkedin) out.push(`<span class="ie-hdr" data-field="hlinkedin-lbl"><a href="${esc(d.linkedin)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.linkedinLbl||d.linkedin)}</a></span>`);
+    if (d.email)    out.push(`<span data-field="hemail"><a href="mailto:${esc(d.email)}" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.email)}</a></span>`);
+    if (d.linkedin) out.push(`<span data-field="hlinkedin-lbl"><a href="${esc(d.linkedin)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.linkedin)}</a></span>`);
     if (d.location) out.push(`<span class="ie-hdr" data-field="hlocation">${esc(d.location)}</span>`);
-    if (d.web)      out.push(`<span class="ie-hdr" data-field="hweb-lbl"><a href="${esc(d.web)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.webLbl||d.web)}</a></span>`);
+    if (d.web)      out.push(`<span data-field="hweb-lbl"><a href="${esc(d.web)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" tabindex="-1">${esc(d.web)}</a></span>`);
     return out;
   },
 
@@ -2365,15 +2253,13 @@ const Render = {
   },
 
   _secTitleStyle(isMain) {
-    if (st.layout === 'standard') {
-      // Standard (ATS): ALL CAPS bold header — divider rendered separately via _dividerHTML
-      return `font-size:${st.ss}px;color:${st.acc};text-transform:uppercase;letter-spacing:.08em;font-weight:700;`;
-    }
-    const bold  = st.secHdrBold  ? 'font-weight:700'    : 'font-weight:600';
+    const bold  = st.secHdrBold  ? 'font-weight:700!important' : 'font-weight:400';
     const ital  = st.secHdrItalic ? 'font-style:italic' : '';
     const uline = st.secHdrUnderline ? 'text-decoration:underline' : '';
+    if (st.layout === 'standard') {
+      return `font-size:${st.ss}px;color:${st.acc};text-transform:uppercase;letter-spacing:.08em;${bold};${ital};${uline}`;
+    }
     const color = isMain ? st.acc : 'currentColor';
-    // st.ss controls Section Header font size for both main and sidebar (matches Typography > Section Header slider)
     return `font-size:${st.ss}px;color:${color};${bold};${ital};${uline};letter-spacing:.04em;text-transform:uppercase`;
   },
 
@@ -3076,7 +2962,7 @@ const Design = {
     Object.entries(colorMap).forEach(([id,k]) => { const el=$(id); if(el&&st[k]) el.value=st[k]; });
     st.nameBarSub = st.nameBarTxt;
     // Selects
-    const selMap = {'fh':'fh','fb':'fb','fc':'companyFontFamily','divider':'div','skill-style':'skillStyle','cert-style':'certStyle','paper-size':'paper','bullet-style':'bulletStyle'};
+    const selMap = {'fc':'companyFontFamily','divider':'div','skill-style':'skillStyle','cert-style':'certStyle','paper-size':'paper','bullet-style':'bulletStyle'};
     Object.entries(selMap).forEach(([id,k]) => { const el=$(id); if(el&&st[k]) el.value=st[k]; });
     // Ranges
     const rangeMap = [
@@ -3109,10 +2995,10 @@ const Design = {
     
     _ts('bt-bold',st.bodyBold);_ts('bt-italic',st.bodyItalic);_ts('bt-underline',st.bodyUnderline);
     Design.updateSkillCertDropdowns();
-    // Contact font
-    const fcContact = $('fc-contact'); if (fcContact) fcContact.value = st.contactFontFamily || 'Arial,sans-serif';
-    // Font specimens
-    ['fh','fb','fc-contact'].forEach(id => {
+    // Global font type
+    const fGlobal = $('f-global'); if (fGlobal) fGlobal.value = st.fh || "'Calibri',sans-serif";
+    // Font specimen
+    ['f-global'].forEach(id => {
       const sel = $(id);
       const spec = $('spec-' + id);
       if (sel && spec) spec.style.fontFamily = sel.value;
@@ -3168,16 +3054,19 @@ const Design = {
   },
 
   bindSelects() {
-    [['fh','fh'],['fb','fb'],['fc','companyFontFamily'],['divider','div'],['skill-style','skillStyle'],['cert-style','certStyle'],['bullet-style','bulletStyle'],['paper-size','paper']].forEach(([id,k]) => {
+    [['fc','companyFontFamily'],['divider','div'],['skill-style','skillStyle'],['cert-style','certStyle'],['bullet-style','bulletStyle'],['paper-size','paper']].forEach(([id,k]) => {
       const el = $(id); if (!el) return;
       el.addEventListener('change', e => { History.push(); st[k] = e.target.value; Render.resume(); });
     });
-    // fb also syncs companyFontFamily
-    const fbEl = $('fb');
-    if (fbEl) fbEl.addEventListener('change', () => { st.companyFontFamily = st.fb; Render.resume(); });
-    // Contact font
-    const fcContact = $('fc-contact');
-    if (fcContact) fcContact.addEventListener('change', () => { st.contactFontFamily = fcContact.value; Render.resume(); });
+    // Global font type — applies to entire page
+    const fGlobalEl = $('f-global');
+    if (fGlobalEl) fGlobalEl.addEventListener('change', () => {
+      const v = fGlobalEl.value;
+      History.push();
+      st.fh = v; st.fb = v; st.contactFontFamily = v; st.companyFontFamily = v;
+      Design.updateFontSpecimen('f-global', 'spec-f-global');
+      Render.resume();
+    });
   },
 
   updateFontSpecimen(selId, specId) {
@@ -3249,9 +3138,7 @@ const Storage = {
       set('h-email',        d.email);
       set('h-loc',          d.location);
       set('h-linkedin',     d.linkedin);
-      set('h-linkedin-lbl', d.linkedinLbl);
       set('h-web',          d.web);
-      set('h-web-lbl',      d.webLbl);
     }
     Design.syncControls();
     Panel.rebuildKeepOpen();
@@ -3316,6 +3203,14 @@ function doDelete(i) { Storage.del(i); }
 // so Chrome's print renderer is never asked to handle anchors in clipped absolute divs.
 function stripLinks(html) {
   return html.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, '$1');
+}
+
+// Strips contenteditable attributes from an HTML string before injecting into the
+// print frame. Chrome's PDF renderer applies heavier font weight / thick strokes to
+// elements that carry contenteditable="true" — removing it at the string level
+// prevents Chrome from ever parsing the attribute into the print DOM.
+function stripEditable(html) {
+  return html.replace(/\s*contenteditable\s*=\s*["'][^"']*["']/gi, '');
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -3509,7 +3404,8 @@ const UI = {
         // Header: fixed exact height, flush at top:0, cannot bleed
         const hdrWrap = document.createElement('div');
         hdrWrap.style.cssText = `position:absolute;top:0;left:0;width:100%;height:${headerH}px;overflow:hidden;z-index:1`;
-        hdrWrap.innerHTML = headerHTML;
+        hdrWrap.innerHTML = stripEditable(headerHTML);
+        hdrWrap.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
         pageDiv.appendChild(hdrWrap);
 
         // Body content: clip zone from headerH — height capped at safe break point
@@ -3518,7 +3414,8 @@ const UI = {
         bodyClip.style.cssText = `position:absolute;top:${headerH}px;left:0;width:100%;height:${page1SafeH}px;overflow:hidden;z-index:2`;
         const inner = document.createElement('div');
         inner.style.cssText = `position:absolute;top:0;left:0;width:100%;max-height:${page1SafeH}px;overflow:hidden`;
-        inner.innerHTML = bodyHTML;
+        inner.innerHTML = stripEditable(bodyHTML);
+        inner.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
         inner.querySelectorAll('.r-side,.r-main').forEach(el => {
           el.style.paddingTop    = pmt + 'px';
           el.style.paddingBottom = '0';
@@ -3535,7 +3432,8 @@ const UI = {
         clipZone.style.cssText = `position:absolute;top:${pmt}px;left:0;width:100%;height:${visibleH}px;overflow:hidden;z-index:1`;
         const inner = document.createElement('div');
         inner.style.cssText = `position:absolute;top:${-startOffset}px;left:0;width:100%;max-height:${safeEnd}px;overflow:hidden`;
-        inner.innerHTML = bodyHTML;
+        inner.innerHTML = stripEditable(bodyHTML);
+        inner.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
         inner.querySelectorAll('.r-side,.r-main').forEach(el => {
           el.style.paddingTop    = '0';
           el.style.paddingBottom = '0';
@@ -3550,7 +3448,8 @@ const UI = {
         const contentOffset = -p * contentH;
         const inner = document.createElement('div');
         inner.style.cssText = `position:absolute;top:${contentOffset}px;left:0;width:100%`;
-        inner.innerHTML = html;
+        inner.innerHTML = stripEditable(html);
+        inner.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
         const rEl = inner.querySelector('.rresume,[class*="rresume"]') || inner.firstElementChild;
         if (rEl) { rEl.style.width='100%'; rEl.style.minHeight='0'; }
         inner.querySelectorAll('.r-side,.r-main').forEach(el => {
@@ -3623,30 +3522,27 @@ const UI = {
     frame.style.visibility = '';
 
     // Inject static <a> elements — position:static in DOM so Chrome annotates them.
-    // @media print CSS below positions them absolutely over the correct link areas.
-    const linkEls = pdfLinks.map(lk => {
+    // Each clone gets a unique id so @media print can target it precisely.
+    const linkEls = pdfLinks.map((lk, i) => {
       const a = document.createElement('a');
+      a.id         = `pdf-la-${i}`;
       a.className  = 'pdf-link-ann';
       a.href       = lk.href;
       if (lk.target) a.target = lk.target;
       a.rel        = 'noopener';
       a.textContent = lk.text;
-      a.dataset.ptop    = lk.top;
-      a.dataset.pleft   = lk.left;
-      a.dataset.pwidth  = lk.width;
-      a.dataset.pheight = lk.height;
       // Off-screen in normal view
       a.style.cssText = 'position:absolute;left:-9999px;top:-9999px;opacity:0;font-size:1px';
       document.body.appendChild(a);
       return a;
     });
 
-    // Dynamic print style: position each <a> at its measured screen coordinate
+    // Dynamic print style: target each <a> by its unique id
     const linkPrintStyle = document.createElement('style');
     linkPrintStyle.id = 'pdf-link-print-style';
     linkPrintStyle.textContent = '@media print{' +
       pdfLinks.map((lk, i) =>
-        `.pdf-link-ann:nth-of-type(${i + 1}){` +
+        `#pdf-la-${i}{` +
         `position:fixed!important;` +
         `top:${lk.top}px!important;` +
         `left:${lk.left}px!important;` +
@@ -3839,10 +3735,10 @@ $$('.tc').forEach(c => {
 });
 
 // Header tab inputs
-['h-name','h-phone','h-email','h-linkedin','h-linkedin-lbl','h-loc','h-web','h-web-lbl'].forEach(id => {
+['h-name','h-phone','h-email','h-linkedin','h-loc','h-web'].forEach(id => {
   const el = $(id); if (!el) return;
   el.addEventListener('input', () => {
-    const map = {'h-phone':'phone','h-email':'email','h-linkedin':'linkedin','h-linkedin-lbl':'linkedinLbl','h-loc':'location','h-web':'web','h-web-lbl':'webLbl'};
+    const map = {'h-phone':'phone','h-email':'email','h-linkedin':'linkedin','h-loc':'location','h-web':'web'};
     if (map[id]) getSec('contact').data[map[id]] = el.value;
     Render.resume();
   });
@@ -3871,7 +3767,7 @@ if (barSepSel) {
 }
 
 // Font specimens
-[['fh','spec-fh'],['fb','spec-fb'],['fc-contact','spec-fc-contact']].forEach(([selId, specId]) => {
+[['f-global','spec-f-global']].forEach(([selId, specId]) => {
   const sel = $(selId);
   if (sel) sel.addEventListener('change', () => Design.updateFontSpecimen(selId, specId));
 });
