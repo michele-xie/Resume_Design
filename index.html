@@ -1966,7 +1966,7 @@ const Panel = {
 function computeSafeBreaks(container, firstPageH, laterPageH, totalH) {
   const ct = container.getBoundingClientRect().top;
   const rects = Array.from(container.querySelectorAll(
-    '.rsec,.r-co-block,.r-role,.r-edu,li'
+    '.r-edu,li'
   )).map(el => {
     const r = el.getBoundingClientRect();
     return { top: r.top - ct, bot: r.bottom - ct };
@@ -1979,8 +1979,10 @@ function computeSafeBreaks(container, firstPageH, laterPageH, totalH) {
     if (nom >= totalH) { safeBreaks.push(totalH); break; }
     let safe = nom;
     for (const r of rects) {
-      if (r.top < nom && r.bot > nom && r.top > pos)
-        safe = Math.min(safe, r.top);
+      if (r.top < nom && r.bot > nom) {
+        if (r.top > pos) safe = Math.min(safe, r.top); // retreat to element top
+        else safe = Math.min(safe, r.bot);              // can't retreat — push to element bottom
+      }
     }
     if (safe <= pos) safe = nom; // element taller than page — unavoidable
     safeBreaks.push(safe);
